@@ -11,3 +11,4 @@ function loadComponent(id, file, selector) {
 //Carrega os componentes principais aqui, componentes mais específicos devem ser incrementados no script da pagina desejada, por favor deixa organizadinho🫦
 loadComponent('header-placeholder', 'components/header.html', '#header-placeholder'); //header
 loadComponent('footer-placeholder', 'components/footer.html', '#footer-placeholder'); //footer
+loadComponent('logo-placeholder', 'components/logo-component.html', '#logo-placeholder'); //logo da RAAZZ
