@@ -5,9 +5,12 @@
 }
 
 .logo {
-    margin: 0;
-    height: 55px;
-    width: 65px;
+    margin: 5px;
+}
+
+.logo img {
+    height: auto;
+    width: 50px;
 }
 
 header {
@@ -31,7 +34,7 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
-    font-size: 11px;
+    font-size: 12px;
 }
 
 nav {
