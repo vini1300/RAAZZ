@@ -1,0 +1,167 @@
+/* styles.css */
+
+/* Estilos globais */
+body {
+    background-color: #f0f0f5;
+    color: #202020;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #323232;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Estilo para o catálogo */
+.catalog-section {
+    margin-bottom: 40px;
+}
+
+.catalog-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #323232;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.vehicle-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.vehicle-card:hover {
+    transform: scale(1.05);
+}
+
+.vehicle-card-info {
+    padding: 15px;
+}
+
+.vehicle-marca-nome {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.vehicle-marca-nome .title-name {
+    color: red;
+}
+
+.vehicle-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.vehicle-card h2 {
+    margin-top: 0;
+    color: #000000;
+    font-size: 1.2em;
+}
+
+.vehicle-card p {
+    color: #666666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.vehicle-card .details {
+    font-size: 0.9em;
+    color: #888888;
+}
+
+/* Estilos para a página de detalhes do veículo */
+.vehicle-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.vehicle-details img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.vehicle-info {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-info h2 {
+    margin-top: 0;
+    color: #000000;
+}
+
+.vehicle-info p {
+    color: #666666;
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.details-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.details-list li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333333;
+}
+
+.details-list li strong {
+    color: #000000;
+}
+
+.button {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 15px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #323232;
+    color: #FFFFFF;
+    transition: 0.3s;
+}
