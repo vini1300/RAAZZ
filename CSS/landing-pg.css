@@ -72,7 +72,17 @@ nav {
     font-family: 'poppins', sans-serif;
 }
 
-.titulo-1 {
+.section1 {
     color: white;
     font-family: 'poppins', sans-serif;
+    font-size: medium;
+    padding: 60px;
+}
+
+.subtitle1 {
+    color: white;
+    font-family: 'poppins', sans-serif;
+    font-size: small;
+    padding: 60px;
+    width: 35%;
 }
