@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 * {
-    transition: all 0.2s linear;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'DM Sans';
+    height: 100dvh;
+    width: 100%;
 }
 
 .logo {
@@ -41,18 +44,7 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
-    font-size: 12px;
-}
-
-.contatos-1 {
-    text-decoration: none;
-    color: white;
-}
-
-.contatos-1:hover {
-    z-index: 10;
-    transform: scale(1.2);
-    transition: transform 0.3s ease, z-index 0s;
+    font-size: 14px;
 }
 
 #botaoLogin {
@@ -81,33 +73,74 @@ nav ul li a {
     display: flex;
     flex-direction: row;
     background-color: black;
+    padding: 60px;
 }
 
 .titles {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    margin-left: 5dvw;
 }
 
 .Title1 {
     color: white;
-    font-size: medium;
-    margin-left: 60px;
-    font-size: 28px;
+    font-size: 44px;
 }
 
 .subtitle1 {
     color: white;
-    margin-left: 60px;
     font-size: 20px;
-    width: 70%;
+    width: 60%;
+}
+
+.carros-button {
+    margin-top: 20px;
+}
+
+#ex-carros-btn {
+    border: none;
+    color: black;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
 }
 
 .velocimetro-div {
     display: flex;
     flex-direction: column;
+    justify-content: end;
 }
 
 .velocimetro-div img {
-    width: 50dvw;
+    width: 40dvw;
+}
+
+aside {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    background-color: black;
+}
+
+.pesquisa {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#pesquisar-carro {
+    width: 100%;
+    margin-inline: 5dvw;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    outline: none;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+#pesquisar-carro::placeholder {
+    color: #aaa;
 }
