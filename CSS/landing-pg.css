@@ -161,3 +161,73 @@ aside {
 #pesquisar-carro::placeholder {
     color: #aaa;
 }
+
+.marcas-de-carros {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ver-todos {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.carrossel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow:auto;
+}
+
+.carrossel-content {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.marca-item {
+    min-width: 150px;
+    margin: 0 15px;
+    transition: transform 0.3s;
+}
+
+.marca-item img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+}
+
+
+/* Ajustes para dispositivos menores */
+@media (max-width: 768px) {
+    .marca-item {
+        min-width: 120px;
+    }
+
+    .prev, .next {
+        font-size: 18px;
+    }
+}
