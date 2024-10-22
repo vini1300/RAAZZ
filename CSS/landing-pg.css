@@ -37,6 +37,7 @@ nav ul {
 
 nav ul li {
     margin-left: 20px;
+    cursor: pointer;
 }
 
 nav ul li a {
@@ -47,13 +48,18 @@ nav ul li a {
     font-size: 14px;
 }
 
+.login-reg-div {
+    display: flex;
+    gap: 10px;
+}
+
 #botaoLogin {
     border: none;
     background-color: black;
     color: white;
     border-radius: 5px;
-    height: 35px;
-    width: 65px;
+    padding: 10px;
+    cursor: pointer;
 }
 
 #botaoLogin:hover {
@@ -66,7 +72,12 @@ nav ul li a {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     border-radius: 5px;
-    padding: 6px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#botaoRegistro:hover {
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .section-1 {
@@ -103,6 +114,11 @@ nav ul li a {
     background-color: white;
     padding: 15px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+#ex-carros-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .velocimetro-div {
@@ -139,6 +155,7 @@ aside {
     outline: none;
     background-color: #f9f9f9;
     color: #333;
+    border: none;
 }
 
 #pesquisar-carro::placeholder {
