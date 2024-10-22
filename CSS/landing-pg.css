@@ -1,7 +1,11 @@
+* {
+    font-family: 'poppins', sans-serif;
+    transition: all 0.2s linear;
+}
+
 .site1 {
     margin: 0;
     padding: 0;
-    background-color: black;
 }
 
 .logo {
@@ -18,6 +22,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    background-color: black;
 }
 
 nav ul {
@@ -35,10 +40,6 @@ nav ul li a {
     align-items: center;
     color: rgb(255, 255, 255);
     font-size: 12px;
-}
-
-nav {
-    font-family: 'poppins', sans-serif;;
 }
 
 .contatos-1 {
@@ -59,7 +60,11 @@ nav {
     border-radius: 5px;
     height: 35px;
     width: 65px;
-    font-family: 'poppins', sans-serif;
+}
+
+#botaoLogin:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
 }
 
 #botaoRegistro {
@@ -67,22 +72,39 @@ nav {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     border-radius: 5px;
-    height: 35px;
-    width: 75px;
-    font-family: 'poppins', sans-serif;
+    padding: 6px;
 }
 
-.section1 {
+.section-1 {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+}
+
+.velocimetro-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.velocimetro-div img {
+    width: 50dvw;
+}
+
+.Title1 {
     color: white;
-    font-family: 'poppins', sans-serif;
     font-size: medium;
-    padding: 60px;
+    margin-left: 60px;
 }
 
 .subtitle1 {
     color: white;
-    font-family: 'poppins', sans-serif;
     font-size: small;
-    padding: 60px;
+    margin-left: 60px;
     width: 35%;
 }
+
