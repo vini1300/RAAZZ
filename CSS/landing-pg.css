@@ -164,7 +164,6 @@ aside {
 
 .marcas-de-carros {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -172,13 +171,14 @@ aside {
 .container {
     position: relative;
     text-align: center;
+    margin: 0;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .header h2 {
@@ -194,9 +194,11 @@ aside {
 
 .carrossel {
     display: flex;
+    width: 100%;
     align-items: center;
     position: relative;
     overflow:auto;
+    margin: 0;
 }
 
 .carrossel-content {
@@ -205,29 +207,23 @@ aside {
 }
 
 .marca-item {
-    min-width: 150px;
+    min-width: 25dvw;
+    height: 20dvh;
     margin: 0 15px;
     transition: transform 0.3s;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .marca-item img {
     width: 100%;
-    max-width: 150px;
+    max-width: 100px;
     height: auto;
     display: block;
-    border: 1px solid #ddd;
     padding: 10px;
     background-color: #fff;
-}
-
-
-/* Ajustes para dispositivos menores */
-@media (max-width: 768px) {
-    .marca-item {
-        min-width: 120px;
-    }
-
-    .prev, .next {
-        font-size: 18px;
-    }
 }
