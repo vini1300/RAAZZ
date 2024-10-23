@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "marca": "Volkswagen",
+        "nome": "Golf",
+        "preco": "R$ 101.990",
+        "km": "97.605 km",
+        "ano": "2017/2018",
+        "tipoMotor": "1.4 TSI",
+        "potencia": "150 CV",
+        "consumo": "12 km/l",
+        "img": "https://www.webmotors.com.br/novo-portal/static/assets/bestsellers/webp/volkswagen-golf.webp",
+        "detalhes": {
+            "tracao": "Dianteira",
+            "aceleracao": "0-100 km/h em 7s",
+            "torque": "250 Nm",
+            "peso": "1350 kg",
+            "capacidadePortaMalas": "380 L",
+            "numeroAssentos": 5,
+            "dimensoes": "4.3m x 1.9m x 1.4m",
+            "tipoCambio": "Automático",
+            "freios": "Disco nas quatro rodas",
+            "suspensao": "Esportiva",
+            "manutencao": "Médio custo",
+            "problemasCronicos": "Desgaste prematuro dos freios"
+        }
+    }
+]
