@@ -9,7 +9,8 @@
         "tipoMotor": "1.4 TSI",
         "potencia": "150 CV",
         "consumo": "12 km/l",
-        "img": "https://www.webmotors.com.br/novo-portal/static/assets/bestsellers/webp/volkswagen-golf.webp",
+        "img-thumb": "https://www.webmotors.com.br/novo-portal/static/assets/bestsellers/webp/volkswagen-golf.webp",
+        "img-car":"exemplo",
         "detalhes": {
             "tracao": "Dianteira",
             "aceleracao": "0-100 km/h em 7s",
