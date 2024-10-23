@@ -11,3 +11,60 @@ const frases = [
   
   // Exibir a frase no elemento com o ID 'subtitulo'
   document.getElementById("subtitulo").textContent = fraseAleatoria;
+
+
+// Função para carregar os dados do JSON e salvar no LocalStorage
+function carregarDadosCarros() {
+  fetch('/RAAZZ/JSON/carros.json.json') // Caminho para o seu arquivo JSON
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erro ao carregar o arquivo JSON');
+      }
+      return response.json();
+    })
+    .then(carros => {
+      // Armazenar no LocalStorage
+      localStorage.setItem('carrosPopulares', JSON.stringify(carros));
+      // Chamar a função para mostrar os carros
+      mostrarCarrosPopulares();
+    })
+    .catch(error => {
+      console.error('Erro ao buscar os dados dos carros:', error);
+    });
+}
+
+// Função para exibir os carros populares a partir do LocalStorage
+function mostrarCarrosPopulares() {
+  const carrosselContent = document.querySelector('.carros-populares .carrossel-content');
+  
+  // Carregar os dados do LocalStorage
+  const carrosPopulares = JSON.parse(localStorage.getItem('carrosPopulares'));
+
+  // Limpar qualquer conteúdo existente no carrossel
+  carrosselContent.innerHTML = '';
+
+  // Verificar se há carros para exibir
+  if (carrosPopulares && carrosPopulares.length > 0) {
+    carrosPopulares.forEach(carro => {
+      // Criando o elemento do card
+      const card = document.createElement('div');
+      card.classList.add('carro-card');
+
+      // Adicionando o conteúdo do carro
+      card.innerHTML = `
+        <img src="${carro.imagem}" alt="${carro.nome}">
+        <h3>${carro.nome}</h3>
+        <p>Ano: ${carro.ano}</p>
+        <p>Preço: ${carro.preco}</p>
+      `;
+
+      // Adicionando o card ao carrossel
+      carrosselContent.appendChild(card);
+    });
+  } else {
+    carrosselContent.innerHTML = '<p>Nenhum carro disponível.</p>';
+  }
+}
+
+// Chamar a função para carregar os dados e exibir os carros ao carregar a página
+document.addEventListener('DOMContentLoaded', carregarDadosCarros);
