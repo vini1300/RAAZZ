@@ -1,21 +1,21 @@
 // Array de frases
 const frases = [
-    "Encontre todas as informações que você precisa para fazer a escolha certa do seu primeiro carro.",
-    "Escolher seu primeiro carro pode ser um desafio, mas estamos aqui para facilitar essa jornada.",
-    "Quer fazer a escolha perfeita para o seu primeiro carro? Aqui você encontra todas as dicas e comparações.",
-    "Não sabe por onde começar ao escolher seu primeiro carro? Nós temos as ferramentas para te ajudar."
-  ];
-  
-  // Selecionar uma frase aleatória
-  const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
-  
-  // Exibir a frase no elemento com o ID 'subtitulo'
-  document.getElementById("subtitulo").textContent = fraseAleatoria;
+  "Encontre todas as informações que você precisa para fazer a escolha certa do seu primeiro carro.",
+  "Escolher seu primeiro carro pode ser um desafio, mas estamos aqui para facilitar essa jornada.",
+  "Quer fazer a escolha perfeita para o seu primeiro carro? Aqui você encontra todas as dicas e comparações.",
+  "Não sabe por onde começar ao escolher seu primeiro carro? Nós temos as ferramentas para te ajudar."
+];
+
+// Selecionar uma frase aleatória
+const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
+
+// Exibir a frase no elemento com o ID 'subtitulo'
+document.getElementById("subtitulo").textContent = fraseAleatoria;
 
 
 // Função para carregar os dados do JSON e salvar no LocalStorage
 function carregarDadosCarros() {
-  fetch('../../JSON/carros.json') // Caminho relativo do JS para o JSON
+  fetch('JSON/carros.json') // Caminho relativo do JS para o JSON
     .then(response => {
       if (!response.ok) {
         throw new Error('Erro ao carregar o arquivo JSON');
@@ -38,7 +38,7 @@ function carregarDadosCarros() {
 // Função para exibir os carros populares a partir do LocalStorage
 function mostrarCarrosPopulares() {
   const carrosselContent = document.querySelector('.carros-populares .carrossel-content');
-  
+
   // Carregar os dados do LocalStorage
   const carrosPopulares = JSON.parse(localStorage.getItem('carrosPopulares'));
 
@@ -55,9 +55,14 @@ function mostrarCarrosPopulares() {
       // Adicionando o conteúdo do carro
       card.innerHTML = `
         <img src="${carro.imagem}" alt="${carro.nome}">
-        <h3>${carro.nome}</h3>
-        <p>Ano: ${carro.ano}</p>
-        <p>Preço: ${carro.preco}</p>
+        <div class="vehicle-card-info">
+          <div class="vehicle-marca-nome">
+            <h2 class="title-marca">${carro.marca}</h2>
+            <h2 class="title-name">${carro.nome}</h2>
+          </div>
+          <p class="price">${carro.preco}</p>
+          <p class="details">${carro.ano}</p>
+        </div>
       `;
 
       // Adicionando o card ao carrossel
