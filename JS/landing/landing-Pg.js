@@ -15,7 +15,7 @@ const frases = [
 
 // Função para carregar os dados do JSON e salvar no LocalStorage
 function carregarDadosCarros() {
-  fetch('/RAAZZ/JSON/carros.json.json') // Caminho para o seu arquivo JSON
+  fetch('../../JSON/carros.json') // Caminho relativo do JS para o JSON
     .then(response => {
       if (!response.ok) {
         throw new Error('Erro ao carregar o arquivo JSON');
@@ -32,6 +32,8 @@ function carregarDadosCarros() {
       console.error('Erro ao buscar os dados dos carros:', error);
     });
 }
+
+// Chamando a função ao carregar a página
 
 // Função para exibir os carros populares a partir do LocalStorage
 function mostrarCarrosPopulares() {
