@@ -11,7 +11,12 @@ function frase() {
   const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
 
   // Exibir a frase no elemento com o ID 'subtitulo'
-  document.getElementById("subtitulo").textContent = fraseAleatoria;
+  const subtituloElement = document.getElementById("subtitulo");
+  if (subtituloElement) {
+    subtituloElement.textContent = fraseAleatoria;
+  } else {
+    console.error('Elemento #subtitulo não encontrado.');
+  }
 }
 
 //togle-menu
@@ -19,9 +24,13 @@ function menu() {
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('nav ul');
 
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  } else {
+    console.error('Elemento .menu-toggle ou nav ul não encontrado.');
+  }
 }
 menu();
 
@@ -30,16 +39,20 @@ function scroll() {
   let lastScrollY = window.scrollY;
   const header = document.getElementById("header");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > lastScrollY) {
-      // Scroll para baixo - esconder o header
-      header.classList.add("hide");
-    } else {
-      // Scroll para cima - mostrar o header
-      header.classList.remove("hide");
-    }
-    lastScrollY = window.scrollY;
-  });
+  if (header) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > lastScrollY) {
+        // Scroll para baixo - esconder o header
+        header.classList.add("hide");
+      } else {
+        // Scroll para cima - mostrar o header
+        header.classList.remove("hide");
+      }
+      lastScrollY = window.scrollY;
+    });
+  } else {
+    console.error('Elemento #header não encontrado.');
+  }
 }
 scroll();
 
@@ -70,11 +83,11 @@ function mostrarCarrosPopulares() {
       card.innerHTML = `
         <div class="vehicle-card-info">
           <div class="vehicle-marca-nome">
-            <h2 class="title-marca">${carro.marca}</h2>
-            <h2 class="title-name">${carro.nome}</h2>
+            <h2 class="title-marca">\${carro.marca}</h2>
+            <h2 class="title-name">\${carro.nome}</h2>
           </div>
-          <p class="price">${carro.preco}</p>
-          <p class="details">${carro.ano}</p>
+          <p class="price">\${carro.preco}</p>
+          <p class="details">\${carro.ano}</p>
         </div>
       `;
 
@@ -85,3 +98,29 @@ function mostrarCarrosPopulares() {
     carrosselContent.innerHTML = '<p>Nenhum carro disponível.</p>';
   }
 }
+
+function carregarDados() {
+  if (!localStorage.getItem('carrosPopulares')) {
+    fetch('carros.json')
+      .then(response => response.json())
+      .then(data => {
+        // Armazena os dados no localStorage
+        localStorage.setItem('carrosPopulares', JSON.stringify(data));
+
+        // Chama a função para mostrar os carros
+        mostrarCarrosPopulares();
+      })
+      .catch(error => {
+        console.error('Erro ao carregar os dados:', error);
+        const carrosselContent = document.querySelector('.carros-populares .carrossel-content');
+        if (carrosselContent) {
+          carrosselContent.innerHTML = '<p>Erro ao carregar os carros. Tente novamente mais tarde.</p>';
+        }
+      });
+  } else {
+    mostrarCarrosPopulares();
+  }
+}
+
+// Chama a função carregarDados ao carregar a página
+carregarDados();
