@@ -247,9 +247,77 @@ aside {
     height: auto;
     display: block;
     padding: 10px;
-    background-color: #fff;
+    background-color: #fff;}
+.manutencao {
+    width: 100%;
+    height: 608px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
+.mega-txt {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 30px;
+    display: left;
+    position: relative;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 0px;
+
+}
+
+.mega-txt h1 {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 30px 20px 0px 10px;
+    width: 430px;
+}
+
+.text-nrm {
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    margin-left: 5px;
+    padding: 3px 20px 0px 10px;
+    width: 430px;
+    font-size: 15px;
+}
+
+.text-nrm p{
+    font-family: 'Poppins', sans-serif;
+    width: 700px;
+    color: var(--primary-dark2);
+    margin-right: 50px;
+    padding-right: 60px;
+}
+
+.img-oleo {
+    width: 676px;
+    height: 585px;
+    display: flex;
+    justify-content: right;
+    position: absolute;   /* Alinha o elemento ao topo */
+    right: 0;
+    margin-left: 110px;
+}
+
+.btn-saiba {
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.btn-saiba button {
+    font-family: 'Poppins', sans-serif;
+    width: 200px;          /* Define a largura do botão */
+    height: 60px;          /* Define a altura do botão */
+    font-size: 20px;       /* Aumenta o tamanho do texto */
+    padding: 15px 20px;    /* Adiciona espaço extra dentro do botão */
+    background-color: var(--color-white); /* Cor de fundo */
+    color: var(--primary-dark);           /* Cor do texto */
+    border: none;           /* Remove a borda */
+    border-radius: 5px;     
+    cursor: pointer;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+}
 footer {
     display: flex;
     background-color: var(--primary-dark);
@@ -362,6 +430,5 @@ footer nav ul li {
 .price {
     font-size: 1.2em;
     font-weight: bold;
-    color: #000000;
-    margin-bottom: 10px;
+    color: #000000;    margin-bottom: 10px;
 }
