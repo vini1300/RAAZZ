@@ -184,6 +184,12 @@ aside {
     padding: 20px;
 }
 
+.carros-populares {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .container {
     position: relative;
     text-align: center;
@@ -244,6 +250,7 @@ aside {
     background-color: #fff;
 }
 
+<<<<<<< HEAD
 footer {
     display: flex;
     background-color: var(--primary-dark);
@@ -296,4 +303,66 @@ footer nav ul li {
 #feedback-text {
     border: none;
     border-radius: 5px;
+=======
+.carro-card {
+    display: flex;
+    flex-direction: column; /* Para que o conteúdo seja empilhado verticalmente */
+    justify-content: start;
+    align-items: center;
+    width: 25vw;
+    height: auto; /* Deixar o height ajustável */
+    margin: 5px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: start;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    max-width: 30vw;
+    min-width: 200px;
+    padding: 5px; /* Espaçamento interno para garantir uma melhor visualização */
+}
+.carro-card:hover {
+    transform: scale(1.01);
+}
+
+.vehicle-card-info {
+    padding: 15px;
+}
+
+.vehicle-marca-nome {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.vehicle-marca-nome .title-name {
+    color: red;
+}
+
+.vehicle-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.vehicle-card h2 {
+    margin-top: 0;
+    color: #000000;
+    font-size: 1.2em;
+}
+
+.vehicle-card p {
+    color: #666666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+>>>>>>> 877c6f75cc6cd9505364ace20023759eafc95fa4
 }
