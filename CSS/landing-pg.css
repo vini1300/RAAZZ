@@ -250,7 +250,6 @@ aside {
     background-color: #fff;
 }
 
-<<<<<<< HEAD
 footer {
     display: flex;
     background-color: var(--primary-dark);
@@ -303,7 +302,8 @@ footer nav ul li {
 #feedback-text {
     border: none;
     border-radius: 5px;
-=======
+}
+
 .carro-card {
     display: flex;
     flex-direction: column; /* Para que o conteúdo seja empilhado verticalmente */
@@ -364,5 +364,4 @@ footer nav ul li {
     font-weight: bold;
     color: #000000;
     margin-bottom: 10px;
->>>>>>> 877c6f75cc6cd9505364ace20023759eafc95fa4
 }
