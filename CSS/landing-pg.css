@@ -1,7 +1,7 @@
 :root {
     --primary:#dcdcdc ;
     --primary-light:#EAEAEA;
-    --primary-dark:#202020 ;
+    --primary-dark:#2f2f2f ;
     --primary-dark2:#323232 ;
     --primary-darkM:#140000 ;
     --color-white: #efefef;
@@ -24,71 +24,79 @@ body {
     width: 100%;
 }
 
-.logo {
-    margin: 5px;
-}
-
-.logo img {
-    height: auto;
-    width: 50px;
-}
-
+/* Estilos para telas grandes */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
     padding: 10px 20px;
     background-color: black;
-}
-
-nav ul {
+  }
+  
+  header .logo img {
+    height: auto;
+    width: 50px;
+  }
+  
+  nav ul {
     display: flex;
+    gap: 5vw;
     list-style-type: none;
-}
-
-nav ul li {
-    margin-left: 20px;
+  }
+  
+  nav ul li {
     cursor: pointer;
-}
-
-nav ul li a {
+  }
+  
+  nav ul li a {
     text-decoration: none;
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
     font-size: 14px;
-}
+  }
 
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Estilo dos botões de Login e Registro */
 .login-reg-div {
     display: flex;
-    gap: 10px;
+    gap: 15px; /* Espaço entre os botões */
+    align-items: center;
 }
 
-#botaoLogin {
-    border: none;
-    background-color: black;
+#botaoLogin, #botaoRegistro {
+    background-color: transparent;
     color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
     border-radius: 5px;
-    padding: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#botaoLogin:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+#botaoLogin:hover, #botaoRegistro:hover {
+    background-color: white;
     color: black;
 }
 
+/* Estilo específico para o botão de Registro */
 #botaoRegistro {
-    border: none;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid white;
 }
 
 #botaoRegistro:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+    color: white;
+    border-color: white;
 }
 
 .section-1 {
@@ -216,6 +224,7 @@ aside {
 
 .carrossel {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     align-items: center;
     position: relative;
@@ -247,12 +256,24 @@ aside {
     height: auto;
     display: block;
     padding: 10px;
-    background-color: #fff;}
+    background-color: #fff;
+}
+
 .manutencao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     width: 100%;
-    height: 608px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0;
+    gap: 20px;
+    background-color: var(--color-white);
+}
+
+.texto {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .mega-txt {
@@ -269,7 +290,6 @@ aside {
 .mega-txt h1 {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 30px 20px 0px 10px;
     width: 430px;
 }
 
@@ -277,99 +297,48 @@ aside {
     font-family: 'Space Grotesk', sans-serif;
     margin: 0;
     margin-left: 5px;
-    padding: 3px 20px 0px 10px;
-    width: 430px;
     font-size: 15px;
 }
 
 .text-nrm p{
     font-family: 'Poppins', sans-serif;
-    width: 700px;
     color: var(--primary-dark2);
-    margin-right: 50px;
     padding-right: 60px;
 }
 
 .img-oleo {
-    width: 676px;
-    height: 585px;
-    display: flex;
-    justify-content: right;
-    position: absolute;   /* Alinha o elemento ao topo */
-    right: 0;
-    margin-left: 110px;
-}
+    position: relative;
+    width: 100vw; /* Preencher toda a largura da viewport */
+    height: 100vh; /* Preencher toda a altura da viewport */
+    overflow: hidden; /* Garantir que o conteúdo extra seja ocultado */
+  }
+  
+  .img-oleo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobrir a seção sem distorcer a imagem */
+    object-position: center; /* Centralizar a imagem */
+    display: block;
+  }
 
 .btn-saiba {
-    margin-left: 10px;
     margin-top: 40px;
 }
 
 .btn-saiba button {
     font-family: 'Poppins', sans-serif;
-    width: 200px;          /* Define a largura do botão */
-    height: 60px;          /* Define a altura do botão */
     font-size: 20px;       /* Aumenta o tamanho do texto */
-    padding: 15px 20px;    /* Adiciona espaço extra dentro do botão */
+    padding: 20px 30px;    /* Adiciona espaço extra dentro do botão */
     background-color: var(--color-white); /* Cor de fundo */
     color: var(--primary-dark);           /* Cor do texto */
-    border: none;           /* Remove a borda */
+    border: 1px solid black;           /* Remove a borda */
     border-radius: 5px;     
     cursor: pointer;
-    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
-}
-footer {
-    display: flex;
-    background-color: var(--primary-dark);
-    color: white;
-    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.logo-2 {
-    border: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-}
-footer nav ul {
-    display: block;
-}
-
-footer nav ul li {
-    display: block;
-}
-
-.feedback {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.ft-title {
-    justify-self: center;
-    align-self: center;
-    font-size: large;
-}
-
-.feedback-email {
-    background-color: var(--primary-dark);
-    padding: 10px;
-}
-
-.feedback-text {
-    background-color: var(--primary-dark);
-    padding: 10px;
-}
-
-#feedback-email {
-    border: none;
-    border-radius: 5px;
-}
-
-#feedback-text {
-    border: none;
-    border-radius: 5px;
+.btn-saiba button:hover {
+    background-color: white;
 }
 
 .carro-card {
@@ -431,4 +400,121 @@ footer nav ul li {
     font-size: 1.2em;
     font-weight: bold;
     color: #000000;    margin-bottom: 10px;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que os itens quebrem para a próxima linha em telas menores */
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.logo-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-2 img {
+    width: 80px; /* Ajuste o tamanho do logo */
+    margin-bottom: 10px;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer nav ul li {
+    margin-bottom: 10px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+footer nav ul li a:hover {
+    color: var(--primary); /* Mudar a cor ao passar o mouse */
+}
+
+@media (max-width: 720px) {
+    .manutencao {
+        flex-direction: column;
+    }
+
+    header .logo {
+        display: none;
+    }
+
+    .velocimetro-div {
+        display: none;
+    }
+
+    nav ul {
+        display: none; /* Esconde o menu padrão por padrão */
+    }
+  
+    .menu-toggle {
+        display: block; /* Mostra o ícone do menu */
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        background: none;
+        border: none;
+    }
+
+    nav ul.active {
+        display: flex; /* Exibe o menu ao clicar no toggle */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Abaixo do header */
+        left: 20px;
+        background-color: black;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 10px;
+        width: 150px;
+        z-index: 1000;
+    }
+
+    nav ul li {
+        padding: 10px;
+    }
+
+    #botaoLogin, #botaoRegistro {
+        width: 100%;
+        padding: 12px;
+    }
+
+    footer {
+        flex-direction: column; /* Footer em uma única coluna em telas pequenas */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .feedback, footer nav {
+        width: 100%;
+    }
+
+    footer nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .feedback input {
+        width: 90%; /* Ajustar o campo de entrada em telas menores */
+    }
+
+    .logo-2 img {
+        width: 60px; /* Reduzir o tamanho do logo em telas menores */
+    }
 }

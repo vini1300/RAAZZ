@@ -12,6 +12,13 @@ const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
 // Exibir a frase no elemento com o ID 'subtitulo'
 document.getElementById("subtitulo").textContent = fraseAleatoria;
 
+//togle-menu
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
 
 // Função para carregar os dados do JSON e salvar no LocalStorage
 function carregarDadosCarros() {
