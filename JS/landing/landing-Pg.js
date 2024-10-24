@@ -54,7 +54,7 @@ function mostrarCarrosPopulares() {
 
       // Adicionando o conteúdo do carro
       card.innerHTML = `
-        <img src="${carro.imagem}" alt="${carro.nome}">
+        <img src="${carro['img-thumb']}" alt="${carro.nome}" style="width:150px; height:150px">
         <div class="vehicle-card-info">
           <div class="vehicle-marca-nome">
             <h2 class="title-marca">${carro.marca}</h2>
