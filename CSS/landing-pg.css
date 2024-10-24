@@ -250,6 +250,7 @@ aside {
     background-color: #fff;}
 .manutencao {
     width: 100%;
+    height: 608px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -288,7 +289,7 @@ aside {
 
 .img-oleo {
     width: 676px;
-    height: 648px;
+    height: 585px;
     display: flex;
     justify-content: right;
     position: absolute;   /* Alinha o elemento ao topo */
