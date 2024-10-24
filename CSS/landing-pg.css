@@ -19,7 +19,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'DM Sans';
+    font-family: 'poppins', sans-serif;
     height: 100dvh;
     width: 100%;
 }
@@ -107,6 +107,11 @@ nav ul li a {
 .Title1 {
     color: white;
     font-size: 44px;
+}
+
+.Title1 h1 {
+    margin-bottom: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .subtitle1 {
@@ -237,4 +242,58 @@ aside {
     display: block;
     padding: 10px;
     background-color: #fff;
+}
+
+footer {
+    display: flex;
+    background-color: var(--primary-dark);
+    color: white;
+    justify-content: space-between;
+}
+
+.logo-2 {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+footer nav ul {
+    display: block;
+}
+
+footer nav ul li {
+    display: block;
+}
+
+.feedback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ft-title {
+    justify-self: center;
+    align-self: center;
+    font-size: large;
+}
+
+.feedback-email {
+    background-color: var(--primary-dark);
+    padding: 10px;
+}
+
+.feedback-text {
+    background-color: var(--primary-dark);
+    padding: 10px;
+}
+
+#feedback-email {
+    border: none;
+    border-radius: 5px;
+}
+
+#feedback-text {
+    border: none;
+    border-radius: 5px;
 }
