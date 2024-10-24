@@ -247,10 +247,7 @@ aside {
     height: auto;
     display: block;
     padding: 10px;
-    background-color: #fff;
-}
-
-<<<<<<< HEAD
+    background-color: #fff;}
 .manutencao {
     width: 100%;
     margin: 0 auto;
@@ -312,10 +309,8 @@ aside {
     background-color: var(--color-white); /* Cor de fundo */
     color: var(--primary-dark);           /* Cor do texto */
     border: none;           /* Remove a borda */
-    border-radius: 5px; 
-    cursor: pointer;
-
-=======
+    border-radius: 5px;     cursor: pointer;
+}
 footer {
     display: flex;
     background-color: var(--primary-dark);
@@ -428,7 +423,5 @@ footer nav ul li {
 .price {
     font-size: 1.2em;
     font-weight: bold;
-    color: #000000;
-    margin-bottom: 10px;
->>>>>>> 976ba1a77cefa8faeff4a615dc9fb812608e80c7
+    color: #000000;    margin-bottom: 10px;
 }
