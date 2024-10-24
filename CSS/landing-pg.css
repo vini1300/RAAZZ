@@ -1,113 +1,3 @@
-:root {
-    --primary:#dcdcdc ;
-    --primary-light:#EAEAEA;
-    --primary-dark:#2f2f2f ;
-    --primary-dark2:#323232 ;
-    --primary-darkM:#140000 ;
-    --color-white: #efefef;
-
-
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-
-* {
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins', sans-serif;
-    height: 100dvh;
-    width: 100%;
-}
-
-section {
-    width: 100%;
-}
-
-/* Estilos para telas grandes */
-#header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: black;
-    z-index: 10000;
-    transition: top 0.3s ease;
-  }
-  
-  #header.hide {
-    top: -100%;
-  }
-  
-  header .logo img {
-    height: auto;
-    width: 50px;
-  }
-  
-  nav ul {
-    display: flex;
-    gap: 5vw;
-    list-style-type: none;
-  }
-  
-  nav ul li {
-    cursor: pointer;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-
-  /* Estilo dos botões de Login e Registro */
-.login-reg-div {
-    display: flex;
-    gap: 15px; /* Espaço entre os botões */
-    align-items: center;
-}
-
-#botaoLogin, #botaoRegistro {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#botaoLogin:hover, #botaoRegistro:hover {
-    background-color: white;
-    color: black;
-}
-
-/* Estilo específico para o botão de Registro */
-#botaoRegistro {
-    background-color: white;
-    color: black;
-    border: 2px solid white;
-}
-
-#botaoRegistro:hover {
-    background-color: transparent;
-    color: white;
-    border-color: white;
-}
 
 .section-1 {
     display: flex;
@@ -455,53 +345,6 @@ footer nav ul li a:hover {
 }
 
 @media (max-width: 800px) {
-    .manutencao {
-        flex-direction: column;
-    }
-
-    header .logo {
-        display: none;
-    }
-
-    .velocimetro-div {
-        display: none;
-    }
-
-    nav ul {
-        display: none; /* Esconde o menu padrão por padrão */
-    }
-  
-    .menu-toggle {
-        display: block; /* Mostra o ícone do menu */
-        cursor: pointer;
-        color: white;
-        font-size: 24px;
-        background: none;
-        border: none;
-    }
-
-    nav ul.active {
-        display: flex; /* Exibe o menu ao clicar no toggle */
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Abaixo do header */
-        left: 20px;
-        background-color: black;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        border-radius: 10px;
-        width: 150px;
-        z-index: 1000;
-    }
-
-    nav ul li {
-        padding: 10px;
-    }
-
-    #botaoLogin, #botaoRegistro {
-        width: 100%;
-        padding: 12px;
-    }
 
     footer {
         flex-direction: column; /* Footer em uma única coluna em telas pequenas */
@@ -526,5 +369,13 @@ footer nav ul li a:hover {
 
     .logo-2 img {
         width: 60px; /* Reduzir o tamanho do logo em telas menores */
+    }
+
+    .manutencao {
+        flex-direction: column;
+    }
+
+    .velocimetro-div {
+        display: none;
     }
 }
