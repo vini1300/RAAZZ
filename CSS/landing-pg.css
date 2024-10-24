@@ -24,16 +24,26 @@ body {
     width: 100%;
 }
 
+section {
+    width: 100%;
+}
+
 /* Estilos para telas grandes */
-header {
+#header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    z-index: 10000;
+    top: 0;
     width: 100%;
     padding: 10px 20px;
     background-color: black;
+    z-index: 10000;
+    transition: top 0.3s ease;
+  }
+  
+  #header.hide {
+    top: -100%;
   }
   
   header .logo img {
@@ -444,7 +454,7 @@ footer nav ul li a:hover {
     color: var(--primary); /* Mudar a cor ao passar o mouse */
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
     .manutencao {
         flex-direction: column;
     }

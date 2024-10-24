@@ -1,24 +1,48 @@
-// Array de frases
-const frases = [
-  "Encontre todas as informações que você precisa para fazer a escolha certa do seu primeiro carro.",
-  "Escolher seu primeiro carro pode ser um desafio, mas estamos aqui para facilitar essa jornada.",
-  "Quer fazer a escolha perfeita para o seu primeiro carro? Aqui você encontra todas as dicas e comparações.",
-  "Não sabe por onde começar ao escolher seu primeiro carro? Nós temos as ferramentas para te ajudar."
-];
+function frase() {
+  // Array de frases
+  const frases = [
+    "Encontre todas as informações que você precisa para fazer a escolha certa do seu primeiro carro.",
+    "Escolher seu primeiro carro pode ser um desafio, mas estamos aqui para facilitar essa jornada.",
+    "Quer fazer a escolha perfeita para o seu primeiro carro? Aqui você encontra todas as dicas e comparações.",
+    "Não sabe por onde começar ao escolher seu primeiro carro? Nós temos as ferramentas para te ajudar."
+  ];
 
-// Selecionar uma frase aleatória
-const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
+  // Selecionar uma frase aleatória
+  const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
 
-// Exibir a frase no elemento com o ID 'subtitulo'
-document.getElementById("subtitulo").textContent = fraseAleatoria;
+  // Exibir a frase no elemento com o ID 'subtitulo'
+  document.getElementById("subtitulo").textContent = fraseAleatoria;
+}
 
 //togle-menu
-const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('nav ul');
+function menu() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('nav ul');
 
-menuToggle.addEventListener('click', () => {
+  menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-});
+  });
+}
+menu();
+
+//scroll
+function scroll() {
+  let lastScrollY = window.scrollY;
+  const header = document.getElementById("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > lastScrollY) {
+      // Scroll para baixo - esconder o header
+      header.classList.add("hide");
+    } else {
+      // Scroll para cima - mostrar o header
+      header.classList.remove("hide");
+    }
+    lastScrollY = window.scrollY;
+  });
+}
+scroll();
+
 
 // Função para carregar os dados do JSON e salvar no LocalStorage
 function carregarDadosCarros() {
