@@ -11,122 +11,109 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="CSS/landing-pg.css">
     <link rel="stylesheet" href="CSS/global-style.css">
+    <link rel="stylesheet" href="CSS/landing-pg.css">
 </head>
 
 <body>
-    <section class="section-1">
-        <div class="titles">
-            <div class="Title1">
-                <h1>RAAZZ</h1>
+    <main>
+        <section class="section-1">
+            <div class="titles">
+                <div class="Title1">
+                    <h1>RAAZZ</h1>
+                </div>
+                <div class="subtitle1">
+                    <p id="subtitulo">
+                        Encontre todas as informações que você precisa para fazer a escolha certa do seu primeiro carro.
+                        Simplificamos o processo para que você tome a melhor decisão com confiança e facilidade.
+                    </p>
+                </div>
+                <div class="carros-button">
+                    <button type="button" id="ex-carros-btn" onclick="goToCarList()">Explorar Carros</button>
+                </div>
             </div>
-            <div class="subtitle1">
-                <p id="subtitulo">
-                    Encontre todas as informações que você precisa para fazer a escolha certa do seu primeiro carro.
-                    Simplificamos o processo para que você tome a melhor decisão com confiança e facilidade.
-                </p>
+            <div class="velocimetro-div">
+                <img id="velocimetro-img" src="images/velocimetro.png" alt="velocimentro">
             </div>
-            <div class="carros-button">
-                <button type="button" id="ex-carros-btn">Explorar Carros</button>
+        </section>
+        <aside>
+            <div class="pesquisa">
+                <input type="search" name="search" id="pesquisar-carro" placeholder="Pesquisar Carro...">
             </div>
-        </div>
-        <div class="velocimetro-div">
-            <img id="velocimetro-img" src="images/velocimetro.png" alt="velocimentro">
-        </div>
-    </section>
-    <aside>
-        <div class="pesquisa">
-            <input type="search" name="search" id="pesquisar-carro" placeholder="Pesquisar Carro...">
-        </div>
-    </aside>
-    <section class="marcas-de-carros">
-        <div class="container">
-            <div class="header">
-                <h2>Marcas de Carros</h2>
-                <a href="#" class="ver-todos">ver todos</a>
-            </div>
+        </aside>
+        <section class="marcas-de-carros">
+            <div class="container">
+                <div class="header">
+                    <h2>Marcas de Carros</h2>
+                    <a href="#" class="ver-todos">ver todos</a>
+                </div>
 
-            <div class="carrossel">
-                <div class="carrossel-content">
-                    <div class="marca-item">
-                        <img src="images/marcas/fiat-logo.png" alt="FIAT">
-                    </div>
-                    <div class="marca-item">
-                        <img src="images/marcas/volkswagen-logo.png" alt="Volkswagen">
-                    </div>
-                    <div class="marca-item">
-                        <img src="images/marcas/renault-logo.png" alt="Renault">
-                    </div>
-                    <div class="marca-item">
-                        <img src="images/marcas/chevrolet-logo.png" alt="Chevrolet">
-                    </div>
-                    <div class="marca-item">
-                        <img src="images/marcas/toyota-logo" alt="Toyota">
-                    </div>
-                    <div class="marca-item">
-                        <img src="images/marcas/honda-logo.png" alt="Honda">
-                    </div>
-                    <div class="marca-item">
-                        <img src="images/marcas/ford-logo.png" alt="Ford">
-                    </div>
-                    <div class="marca-item">
-                        <img src="images/marcas/hyundai-logo.png" alt="Hyundai">
+                <div class="carrossel">
+                    <div class="carrossel-content">
+                        <div class="marca-item">
+                            <img src="images/marcas/fiat-logo.png" alt="FIAT">
+                        </div>
+                        <div class="marca-item">
+                            <img src="images/marcas/volkswagen-logo.png" alt="Volkswagen">
+                        </div>
+                        <div class="marca-item">
+                            <img src="images/marcas/renault-logo.png" alt="Renault">
+                        </div>
+                        <div class="marca-item">
+                            <img src="images/marcas/chevrolet-logo.png" alt="Chevrolet">
+                        </div>
+                        <div class="marca-item">
+                            <img src="images/marcas/toyota-logo" alt="Toyota">
+                        </div>
+                        <div class="marca-item">
+                            <img src="images/marcas/honda-logo.png" alt="Honda">
+                        </div>
+                        <div class="marca-item">
+                            <img src="images/marcas/ford-logo.png" alt="Ford">
+                        </div>
+                        <div class="marca-item">
+                            <img src="images/marcas/hyundai-logo.png" alt="Hyundai">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="carros-populares">
-        <div class="container">
-            <div class="header">
-                <h2>Mais Buscados</h2>
-                <a href="#" class="ver-todos">ver todos</a>
-            </div>
-            <div class="carrossel">
-                <div class="carrossel-content">
-                    <!-- carros  -->
+        <section class="carros-populares">
+            <div class="container">
+                <div class="header">
+                    <h2>Mais Buscados</h2>
+                    <a href="#" class="ver-todos">ver todos</a>
+                </div>
+                <div class="carrossel">
+                    <div class="carrossel-content">
+                        <!-- carros  -->
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <section class="manutencao">
-        <div class="texto">
-            <div class="mega-txt">
-                <h1>Blog da RAAZZ</h1>
+        <section class="manutencao">
+            <div class="texto">
+                <div class="mega-txt">
+                    <h1>Blog da RAAZZ</h1>
+                </div>
+                <div class="text-nrm">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam magnam neque, minus inventore
+                        fugit
+                        ab saepe! eeeeeeeeeeeeeeeeeeeeeeeeeeee e e e e e e e e ee e e e<br> </p>
+                </div>
+
+                <div class="btn-saiba">
+                    <button>Saiba Mais</button>
+                </div>
             </div>
-            <div class="text-nrm">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam magnam neque, minus inventore fugit
-                    ab saepe! eeeeeeeeeeeeeeeeeeeeeeeeeeee e e e e e e e e ee e e e<br> </p>
+            <div class="img-oleo">
+                <img src="./images/oleo.png" alt="">
             </div>
-
-            <div class="btn-saiba">
-                <button>Saiba Mais</button>
-            </div>
-        </div>
-        <div class="img-oleo">
-            <img src="./images/oleo.png" alt="">
-        </div>
-    </section>
-
-
-    <footer>
-        <div class="logo-2">
-            <img src="images/logo.png" alt="RAAZZ"> <!-- Logo da empresa -->
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#sobre">Sobre a RAAZZ</a></li>
-                <li><a href="#suporte">Suporte</a></li>
-                <li><a href="#catalogo">Catálogo</a></li>
-            </ul>
-        </nav>
-    </footer>
+        </section>
+    </main>
 
     <script src="JS/landing/landing-Pg.js"></script>
     <script src="JS/global.js"></script>
