@@ -1,16 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Raazz</title>
     <link rel="stylesheet" href="CSS/car-list.css">
     <link rel="stylesheet" href="CSS/global-style.css">
-    <title>Catalogo</title>
 </head>
+
 <body>
-    <header>
-        
-    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-image">
+            <img src="carro-heroi.jpg" alt="Interior de um carro" width="100%" height="auto">
+            <h1>CATÁLOGO RAAZZ</h1>
+        </div>
+    </section>
+
+    <!-- Seção do Catálogo -->
+    <main>
+        <section class="catalogo">
+            <h2>VEJA TODAS AS VARIEDADES DE CARROS</h2>
+            <div class="filtros">
+                <span>Filtros -</span>
+                <select title="filter">
+                    <option>Ordenar</option>
+                    <option>Por ano</option>
+                    <option>Por modelo</option>
+                </select>
+            </div>
+
+            <!-- Lista de Carros -->
+            <div class="lista-carros" id="car-list">
+                <!-- Os carros serão inseridos aqui dinamicamente a partir do arquivo JSON -->
+            </div>
+        </section>
+    </main>
 </body>
-    <script src="JS/global.js"></script>
+<script>
+
+</script>
 </html>
