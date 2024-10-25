@@ -1,0 +1,42 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--primary-dark);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.reg-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.reg-Text {
+    color: white;
+    margin-left: 100px;
+    font-size: large;
+}
+
+.reg-subtitle {
+    padding: 0 none;
+}
+
+.sign {
+    text-decoration: none;
+    color: white;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reg-table {
+    background-color: var(--primary-darkM);
+}
