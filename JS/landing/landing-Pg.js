@@ -15,40 +15,38 @@ function frase() {
   }
 }
 
-// Função para carregar os dados do JSON e salvar no LocalStorage
-function carregarDadosCarros() {
-  fetch('JSON/carros.json') // Caminho relativo do JS para o JSON
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Erro ao carregar o arquivo JSON');
-      }
-      return response.json();
-    })
+function carregarDadosCarrosPaginaInicial() {
+  obterDadosCarros() // Utiliza a função do JS global
     .then(carros => {
-      // Armazenar no LocalStorage
-      localStorage.setItem('carrosPopulares', JSON.stringify(carros));
-      // Chamar a função para mostrar os carros
-      mostrarCarrosPopulares();
+      if (carros) {
+        // Armazenar no LocalStorage
+        localStorage.setItem('carrosPopulares', JSON.stringify(carros));
+        // Chamar a função para mostrar os carros
+        mostrarCarrosPopulares();
+      } else {
+        console.error('Erro: Dados dos carros não disponíveis.');
+      }
     })
     .catch(error => {
       console.error('Erro ao buscar os dados dos carros:', error);
     });
 }
-// Chamando a função ao carregar a página
+
 // Função para exibir os carros populares a partir do LocalStorage
 function mostrarCarrosPopulares() {
   const carrosselContent = document.querySelector('.carros-populares .carrossel-content');
-  // Carregar os dados do LocalStorage
+
   const carrosPopulares = JSON.parse(localStorage.getItem('carrosPopulares'));
-  // Limpar qualquer conteúdo existente no carrossel
+
   carrosselContent.innerHTML = '';
+
   // Verificar se há carros para exibir
   if (carrosPopulares && carrosPopulares.length > 0) {
     carrosPopulares.forEach(carro => {
-      // Criando o elemento do card
+
       const card = document.createElement('div');
       card.classList.add('carro-card');
-      // Adicionando o conteúdo do carro
+
       card.innerHTML = `
         <div class="vehicle-card-info">
           <div class="vehicle-marca-nome">
@@ -59,12 +57,12 @@ function mostrarCarrosPopulares() {
           <p class="details">${carro.ano}</p>
         </div>
       `;
-      // Adicionando o card ao carrossel
+
       carrosselContent.appendChild(card);
     });
   } else {
     carrosselContent.innerHTML = '<p>Nenhum carro disponível.</p>';
   }
 }
-// Chamar a função para carregar os dados e exibir os carros ao carregar a página
-document.addEventListener('DOMContentLoaded', carregarDadosCarros);
+
+document.addEventListener('DOMContentLoaded', carregarDadosCarrosPaginaInicial);
