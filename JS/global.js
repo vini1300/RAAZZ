@@ -155,7 +155,7 @@ async function obterDadosCarros() {
       // Convertendo a resposta para JSON
       const dados = await resposta.json();
       
-      // Retornando os dados para serem usados onde precisar
+      // Retornando os dados para serem usados
       return dados;
     } catch (erro) {
       console.error('Erro ao obter dados dos carros:', erro);
