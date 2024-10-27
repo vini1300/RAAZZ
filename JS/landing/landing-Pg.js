@@ -42,7 +42,7 @@ function mostrarCarrosPopulares() {
 
   // Verificar se há carros para exibir
   if (carrosPopulares && carrosPopulares.length > 0) {
-    carrosPopulares.forEach(carro => {
+    carrosPopulares.slice(0, 10).forEach(carro => {
 
       const card = document.createElement('div');
       card.classList.add('carro-card');
