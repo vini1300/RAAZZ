@@ -1,38 +1,43 @@
 # RAAZZ
 
-/////////////////////////////
+## Integrantes e Seus Papéis
 
---Integrantes e seus papéis--
+- **PO e Líder**: João Gabriel Simi de Oliveira
+- **SM**: Vinícius Guilherme Fenske
+- **Desenvolvedores**:
+  - João Pedro Michuel Medeiros
+  - Lucas Fernando Bogado
+  - Eric Henrique Eich Brandão
+  - Pedro Scherer Justino Feo
 
-PO e Líder: João Gabriel Simi de Oliveira
-SM: Vinícius Guilherme Fenske
-Devs: Joao Pedro Michuel Medeiros,
-Lucas Fernando Bogado,
-Eric Henrique Eich Brandão,
-Pedro Scherer Justino Feo.
+## Descrição do Projeto
 
-//////////////////////////////
+O RAAZZ é um site projetado para ajudar aqueles que estão planejando adquirir seu primeiro carro. Oferecemos informações detalhadas sobre preços, mecânica e dicas valiosas para facilitar a compra de um veículo.
 
-//////////////////////////////
+## Funcionalidades do Site
 
---Descrição do projeto--
+- **Registro e Login**: Os usuários podem criar uma conta ou fazer login para acessar funcionalidades adicionais. Aqueles que preferirem, também podem navegar como visitantes.
+- **Favoritar Carros**: Os usuários podem favoritar os carros que mais interessam, permitindo que salvem buscas relevantes para consulta futura.
+- **Informações Detalhadas sobre Veículos**: Ao selecionar um carro, diversas informações são apresentadas, oferecendo ao usuário um conhecimento abrangente sobre o veículo de interesse.
 
-O RAAZZ é um site voltado a quem pretende realizar 
-a aquisição de seu primeiro carro, mostrando valores, 
-mecânica e dicas para a realização da compra de um carro.
+## Como Contribuir
 
-//////////////////////////////
+Contribuições são bem-vindas! Se você deseja colaborar com o projeto, siga estas etapas:
 
-//////////////////////////////
+1. Faça um fork do repositório.
+2. Crie uma nova branch (`git checkout -b nova-feature`).
+3. Faça suas alterações e commit (`git commit -m 'Adiciona nova feature'`).
+4. Envie para a branch principal (`git push origin nova-feature`).
+5. Crie um Pull Request.
 
---Funcionalidades do site--
+## Licença
 
--O usuário poderá realizar tanto a inscrição quanto login, 
-mas se preferir poderá navegar como visitante.
--O usuário pode favoritar carros em que se interessar, gerando
-a possibilidade de salvar buscas de interesse.
--No geral ao selecionar um carro diversas informações devem ser
-mostradas, para que o usuário tenha um vasto conhecimento sobre
-o veículo de seu interesse.
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-////////////////////////////////
+## Contato
+
+Para dúvidas ou sugestões, entre em contato com um dos membros da equipe.
+
+---
+
+Obrigado por visitar o RAAZZ! Esperamos que nosso site ajude você a encontrar o carro perfeito para você.

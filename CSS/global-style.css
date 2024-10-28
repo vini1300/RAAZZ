@@ -19,9 +19,11 @@
 body {
     margin: 0;
     padding: 0;
+    padding-top: 50px;
     font-family: 'poppins', sans-serif;
     height: 100dvh;
     width: 100%;
+    background-color: black;
 }
 
 section {
@@ -105,6 +107,50 @@ section {
     color: white;
     border-color: white;
 }
+
+footer {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que os itens quebrem para a próxima linha em telas menores */
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.logo-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-2 img {
+    width: 80px; /* Ajuste o tamanho do logo */
+    margin-bottom: 10px;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer nav ul li {
+    margin-bottom: 10px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+footer nav ul li a:hover {
+    color: var(--primary); /* Mudar a cor ao passar o mouse */
+}
+
+
 
 @media (max-width: 800px) {
     header .logo {

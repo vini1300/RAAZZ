@@ -16,36 +16,37 @@ main {
     height: 100dvh;
 }
 
-.reg-section {
+.log-section {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-.reg-Text {
+.log-Text {
     color: white;
     margin-left: 100px;
     font-size: large;
     height: 0;
+}  
+
+.log-subtitle p {
+    margin-bottom: 0;
 }
 
-.reg-subtitle {
-    padding: 0 none;
-}
-
-.sign {
+.reg-Link {
     text-decoration: none;
     color: white;
+    font-size: medium;
 }
 
-.register {
+.login {
     display: flex;
     justify-content: right;
     position: relative;
     padding-right: 80px;
 }
 
-.reg-table {
+.log-table {
     background-color: var(--primary-darkM);
     padding: 20px;
     border-radius: 8px;
@@ -55,7 +56,7 @@ main {
     width: 300px;
 }
 
-.reg-table::before {
+.log-table::before {
     content: "";
     position: absolute;
     top: -10px;
@@ -78,18 +79,16 @@ main {
     z-index: -1;
 }
 
-.reg-table p{
+.log-table div {
+    margin-bottom: 15px;
+}
+
+.log-table p {
     color: #fff;
     margin-bottom: 5px;
 }
 
-.reg-table a{
-    color: #ccc;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.reg-table input {
+.log-table input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -98,11 +97,13 @@ main {
     font-size: 16px;
 }
 
-.reg-table div {
-    margin-bottom: 15px;
+.log-table a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
 }
 
-.reg-button {
+.sign-button {
     border: 0;
     font-size: medium;
     height: 50px;
@@ -110,6 +111,3 @@ main {
     border-radius: 5px;
 }
 
-.reg-button :hover{
-    color: #ccc;
-}
