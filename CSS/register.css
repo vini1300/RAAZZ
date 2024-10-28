@@ -1,0 +1,115 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--primary-dark);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100dvh;
+}
+
+.reg-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.reg-Text {
+    color: white;
+    margin-left: 100px;
+    font-size: large;
+    height: 0;
+}
+
+.reg-subtitle {
+    padding: 0 none;
+}
+
+.sign {
+    text-decoration: none;
+    color: white;
+}
+
+.register {
+    display: flex;
+    justify-content: right;
+    position: relative;
+    padding-right: 80px;
+}
+
+.reg-table {
+    background-color: var(--primary-darkM);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    width: 300px;
+}
+
+.reg-table::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px
+    ), 
+    repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px
+    );
+    background-size: 20px 20px;
+    opacity: 0.15;
+    border-radius: 12px;
+    z-index: -1;
+}
+
+.reg-table p{
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.reg-table a{
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.reg-table input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+}
+
+.reg-table div {
+    margin-bottom: 15px;
+}
+
+.reg-button {
+    border: 0;
+    font-size: medium;
+    height: 50px;
+    width: 260px;
+    border-radius: 5px;
+}
+
+.reg-button :hover{
+    color: #ccc;
+}

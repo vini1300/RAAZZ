@@ -1,0 +1,40 @@
+body {
+    height: 100dvh;
+    background-color: white;
+}
+
+main {
+    padding: 50px;
+}
+
+.lista-carros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid var(--primary-dark);
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.title-div-card {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.titulo {
+    color: red;
+}

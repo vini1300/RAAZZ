@@ -5,20 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo Raazz</title>
-    <link rel="stylesheet" href="CSS/car-list.css">
     <link rel="stylesheet" href="CSS/global-style.css">
+    <link rel="stylesheet" href="CSS/car-list.css">
+   
 </head>
 
 <body>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-image">
-            <img src="carro-heroi.jpg" alt="Interior de um carro" width="100%" height="auto">
-            <h1>CATÁLOGO RAAZZ</h1>
-        </div>
-    </section>
-
     <!-- Seção do Catálogo -->
     <main>
         <section class="catalogo">
@@ -37,48 +29,9 @@
                 <!-- Os carros serão inseridos aqui dinamicamente a partir do arquivo JSON -->
             </div>
         </section>
-
-        <!-- Paginação -->
-        <div class="paginacao">
-            <button>Voltar</button>
-            <span>1 2 3 ... 10</span>
-            <button>Próximo</button>
-        </div>
     </main>
+    <script src="JS/global.js"></script>
+    <script src="JS/car/car-list.js">x</script>
+
 </body>
-<script src="JS/car/car-list.js"></script>
-<script src="JS/global.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', async function () {
-        try {
-            const response = await fetch('JSON/carros.json');
-            if (!response.ok) {
-                throw new Error('Erro ao carregar o arquivo JSON: ' + response.status);
-            }
-            const data = await response.json();
-            const carList = document.getElementById('car-list');
-            data.carros.forEach(carro => {
-                const carItem = document.createElement('div');
-                carItem.classList.add('carro-item');
-
-                const carImg = document.createElement('img');
-                carImg.src = carro.imagem;
-                carImg.alt = carro.nome;
-                carImg.width = 200;
-                carImg.height = 150;
-
-                const carName = document.createElement('p');
-                carName.textContent = carro.nome;
-
-                carItem.appendChild(carImg);
-                carItem.appendChild(carName);
-                carList.appendChild(carItem);
-            });
-        } catch (error) {
-            console.error('Erro ao carregar os carros:', error);
-            const carList = document.getElementById('car-list');
-            carList.textContent = 'Erro ao carregar os carros. Por favor, tente novamente mais tarde.';
-        }
-    });
-</script>
 </html>
