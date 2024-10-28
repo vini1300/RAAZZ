@@ -98,6 +98,8 @@ function handleScroll() {
     });
 }
 
+
+
 // Executar as funções
 createHeader();
 handleScroll();
