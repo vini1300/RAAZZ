@@ -184,12 +184,12 @@ function goToCarList() {
 
 
 
-function registerUser() {
+function registerUser() { //função para registro de usuário
 
     const email = document.getElementById("reg-email").value;
     const password = document.getElementById("password").value;
     
-    if (email && password) {
+    if (email && password) { // se o email e usuário foram preenchidos ele salva os dados em local storage
         const user = {
             email: email,
             password: password
@@ -201,17 +201,17 @@ function registerUser() {
     }
 }
 
-function loginUser() {
+function loginUser() { //função para login do usuário
     
     const email = document.getElementById("reg-email").value;
     const password = document.getElementById("password").value;
 
-    const storedUser = JSON.parse(localStorage.getItem("user"))
+    const storedUser = JSON.parse(localStorage.getItem("user")) //cria uma variável que puxa o usuário criado no local storage
 
     if (storedUser) {
-        if (email == storedUser.email && password == storedUser.password) {
+        if (email == storedUser.email && password == storedUser.password) { //compara a entrada de login do usuário com as informações salvas
             alert("bem vindo a RAAZZ");
-            window.location.href = "car-list.html";
+            window.location.href = "car-list.html"; //direciona o usuário para o restante do site
         } else {
             alert("senha ou email incorretos")
         }
