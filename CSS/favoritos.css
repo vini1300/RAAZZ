@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #202020;
+    position: relative;
+}
+
+.logodarazz {
+    width: 50px;
+    height: 50px;
+    background-image: url('../images/Block.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+.logodarazz:hover {
+    transform: scale(1.1);
+}
+
+.coracao {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.coracao:hover {
+    color:#555;
+}
+
+.Grid-de-Favoritos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.Itens-Favoritos {
+    background-color: #444;
+    width: 100%;
+    padding-bottom: 200px;
+    border-radius: 30px;
+    border: solid 1px #000;
+    transition: transform 0.3s ease;
+}
+
+.Itens-Favoritos:hover {
+    transform: scale(1.05);
+}
+
+.Meus-Favoritos {
+    width: 100%;
+    padding: 20px;
+}
+
+h1.Meus-Favoritos {
+    font-size: 24px;
+    color: #fff;
+    text-align: left;
+}
+
+@media (max-width: 1024px) {
+    .Grid-de-Favoritos {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .Itens-Favoritos {
+        padding-bottom: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    header.header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logodarazz {
+        width: 40px;
+        height: 40px;
+    }
+
+    .coracao {
+        font-size: 20px;
+    }
+
+    .Grid-de-Favoritos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .Itens-Favoritos {
+        padding-bottom: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Grid-de-Favoritos {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .Itens-Favoritos {
+        padding-bottom: 100px;
+    }
+
+    h1.Meus-Favoritos {
+        font-size: 20px;
+    }
+}

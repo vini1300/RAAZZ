@@ -1,5 +1,5 @@
 obterDadosCarros().then(dados => {
-    if (dados) {
+    if (dados) {    
         const catalogoDiv = document.getElementById("car-list");
 
         dados.forEach(carro => {

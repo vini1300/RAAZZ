@@ -98,6 +98,7 @@ async function handleScroll() {
     });
 }
 
+
 async function createFooter() {
     const footer = document.createElement("footer");
 
@@ -166,6 +167,7 @@ async function obterDadosCarros() {
   // Exemplo de como tornar essa função acessível globalmente
   globalThis.obterDadosCarros = obterDadosCarros;
 
+
 // Executar as funções
 createHeader();
 createFooter();
@@ -176,4 +178,44 @@ handleScroll();
 
 function goToCarList() {
     window.location.href = "car-list.html";
+}
+
+//sessão de login
+
+
+
+function registerUser() { //função para registro de usuário
+
+    const email = document.getElementById("reg-email").value;
+    const password = document.getElementById("password").value;
+    
+    if (email && password) { // se o email e usuário foram preenchidos ele salva os dados em local storage
+        const user = {
+            email: email,
+            password: password
+        }
+        localStorage.setItem("user", JSON.stringify(user));
+        alert('usuario registrado com suceso')
+    } else {
+        alert('erro ao registrar')
+    }
+}
+
+function loginUser() { //função para login do usuário
+    
+    const email = document.getElementById("reg-email").value;
+    const password = document.getElementById("password").value;
+
+    const storedUser = JSON.parse(localStorage.getItem("user")) //cria uma variável que puxa o usuário criado no local storage
+
+    if (storedUser) {
+        if (email == storedUser.email && password == storedUser.password) { //compara a entrada de login do usuário com as informações salvas
+            alert("bem vindo a RAAZZ");
+            window.location.href = "car-list.html"; //direciona o usuário para o restante do site
+        } else {
+            alert("senha ou email incorretos")
+        }
+    } else {
+        alert("usuario nao encontrado");
+    }
 }
