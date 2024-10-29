@@ -24,7 +24,6 @@ main {
 }
 
 .log-Text {
-<<<<<<< HEAD
     display: flex;
     position: static;
     color: white;
@@ -35,9 +34,7 @@ main {
 
 .log-subtitle p {
     margin-bottom: 0;
-=======
     color: var(--primary);
->>>>>>> 6b4f76636cc60ff192c8e89e579790ac31a0cd1c
 }
 
 .section-1 {
