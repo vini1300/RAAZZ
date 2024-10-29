@@ -177,3 +177,27 @@ handleScroll();
 function goToCarList() {
     window.location.href = "car-list.html";
 }
+
+//sessão de login
+let email = document.querySelector('#reg-email').value;
+let validEmail = false;
+
+let password = document.querySelector('#password').value;
+let validPassword = false;
+
+email.addEventListener('keyup', () => { //verifica se o email foi preenchido
+    if (email.value.lenght > 1) {
+        validEmail = true;
+    }
+})
+
+senha.addEventListener('keyup', () => { //verifica se a senha foi preenchido
+    if (password.value.lenght >= 6) {
+        validPassword = true;
+    } else {
+        alert('a senha deve conter no minimo 6 caracteres');
+    }
+})
+
+function register() {
+}
