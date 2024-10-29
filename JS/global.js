@@ -98,6 +98,7 @@ async function handleScroll() {
     });
 }
 
+
 async function createFooter() {
     const footer = document.createElement("footer");
 
@@ -166,6 +167,7 @@ async function obterDadosCarros() {
   // Exemplo de como tornar essa função acessível globalmente
   globalThis.obterDadosCarros = obterDadosCarros;
 
+
 // Executar as funções
 createHeader();
 createFooter();
@@ -179,25 +181,41 @@ function goToCarList() {
 }
 
 //sessão de login
-let email = document.querySelector('#reg-email').value;
-let validEmail = false;
 
-let password = document.querySelector('#password').value;
-let validPassword = false;
 
-email.addEventListener('keyup', () => { //verifica se o email foi preenchido
-    if (email.value.lenght > 1) {
-        validEmail = true;
-    }
-})
 
-senha.addEventListener('keyup', () => { //verifica se a senha foi preenchido
-    if (password.value.lenght >= 6) {
-        validPassword = true;
+function registerUser() {
+
+    const email = document.getElementById("reg-email").value;
+    const password = document.getElementById("password").value;
+    
+    if (email && password) {
+        const user = {
+            email: email,
+            password: password
+        }
+        localStorage.setItem("user", JSON.stringify(user));
+        alert('usuario registrado com suceso')
     } else {
-        alert('a senha deve conter no minimo 6 caracteres');
+        alert('erro ao registrar')
     }
-})
+}
 
-function register() {
+function loginUser() {
+    
+    const email = document.getElementById("reg-email").value;
+    const password = document.getElementById("password").value;
+
+    const storedUser = JSON.parse(localStorage.getItem("user"))
+
+    if (storedUser) {
+        if (email == storedUser.email && password == storedUser.password) {
+            alert("bem vindo a RAAZZ");
+            window.location.href = "car-list.html";
+        } else {
+            alert("senha ou email incorretos")
+        }
+    } else {
+        alert("usuario nao encontrado");
+    }
 }

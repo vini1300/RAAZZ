@@ -6,7 +6,6 @@
     --primary-darkM:#140000 ;
     --color-white: #efefef;
 
-
 }
 
 body{
@@ -27,3 +26,37 @@ body{
     max-height: 80%;
     margin: 30px 12px 0px 30px ;
 }
+
+#car-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.car {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.car img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.car h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.car p {
+    margin: 5px 0;
+}
+
