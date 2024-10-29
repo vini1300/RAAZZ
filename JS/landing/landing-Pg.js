@@ -65,4 +65,6 @@ function mostrarCarrosPopulares() {
   }
 }
 
+
+
 document.addEventListener('DOMContentLoaded', carregarDadosCarrosPaginaInicial);

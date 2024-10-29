@@ -7,6 +7,11 @@ main {
     padding: 50px;
 }
 
+.filtro {
+    font-size: 15px;
+    border-radius: 5px;
+}
+
 .lista-carros {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

@@ -55,29 +55,6 @@ main {
     width: 300px;
 }
 
-.reg-table::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: calc(100% + 20px);
-    height: calc(100% + 20px);
-    background-image: repeating-linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.05) 1px,
-        transparent 1px
-    ), 
-    repeating-linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.05) 1px,
-        transparent 1px
-    );
-    background-size: 20px 20px;
-    opacity: 0.15;
-    border-radius: 12px;
-    z-index: -1;
-}
-
 .reg-table p{
     color: #fff;
     margin-bottom: 5px;

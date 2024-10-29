@@ -30,20 +30,19 @@
             </div>
         </section>
         <section class="login">
-            <aside class="log-table">
+            <form class="log-table">
                 <div>
-                    <p>Email</p>
-                    <input type="email" name="email" id="reg-email">
+                    <label for="email">E-mail</label>
+                    <input id="log-email" type="email" required name="E-mail">
                 </div>
                 <div>
-                    <p>Senha</p>
-                    <input type="password" name="password" id="password">
-                    <a href="#forget-password" class="forget-password">Esqueceu sua senha?</a>
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="log-password">
                 </div>
                 <div>
-                    <button class="sign-button">Sign In</button>
+                    <button class="sign-button" type="submit">Sign In</button>
                 </div>
-            </aside>
+            </form>
         </section>
     </main>
 </body>
