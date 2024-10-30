@@ -27,7 +27,7 @@ async function createHeader() {
         { href: 'landing-pg.html', text: 'Inicio' },
         { href: 'car-list.html', text: 'Catalogo' },
         { href: '#suporte', text: 'Suporte' },
-        { href: 'favorites.html', text: 'Favoritos' },
+        { href: 'favoritos.html', text: 'Favoritos' },
     ];
 
     links.forEach(link => {
@@ -217,5 +217,12 @@ function loginUser() { //função para login do usuário
         }
     } else {
         alert("usuario nao encontrado");
+    }
+
+    if(storedUser) {
+        links.push({href: 'favoritos.html', text: 'Favoritos'});
+    }
+    if(!storedUser) {
+        window.location.href = "login.html";
     }
 }
