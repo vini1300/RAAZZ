@@ -52,10 +52,18 @@ async function createHeader() {
     botaoLogin.textContent = 'Login';
     botaoLogin.className = 'login-button';
 
+    botaoLogin.addEventListener("click", () => {
+        window.location.href = "login.html";
+    })
+
     const botaoRegistro = document.createElement('button');
     botaoRegistro.id = 'botaoRegistro';
     botaoRegistro.textContent = 'Registro';
     botaoRegistro.className = 'register-button';
+
+    botaoRegistro.addEventListener("click", () => {
+        window.location.href = "register.html";
+    })
 
     loginRegDiv.appendChild(botaoLogin);
     loginRegDiv.appendChild(botaoRegistro);
@@ -206,7 +214,7 @@ function loginUser() { //função para login do usuário
     const email = document.getElementById("reg-email").value;
     const password = document.getElementById("password").value;
 
-    const storedUser = JSON.parse(localStorage.getItem("user")) //cria uma variável que puxa o usuário criado no local storage
+    const storedUser = JSON.parse(localStorage.getItem("storedUser")) //cria uma variável que puxa o usuário criado no local storage
 
     if (storedUser) {
         if (email == storedUser.email && password == storedUser.password) { //compara a entrada de login do usuário com as informações salvas
