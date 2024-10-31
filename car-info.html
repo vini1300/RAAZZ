@@ -3,22 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAAZZ | Informacões do carro</title>
+    <title>RAAZZ | Informações do carro</title>
+    <link rel="stylesheet" href="./CSS/global-style.css">
     <link rel="stylesheet" href="./CSS/car-info.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     
+    <header id="header"></header>
+    
+    <main>
+        <section class="section1">
+            <div class="container">
+                <div class="container-img"  >
+                    <img src="./images/velocimetro.png" alt="">
+                </div>
+            </div>
+        </section>
 
+        <section class="section2">
+            
+            <div class="description">
+                <div class="card">
+                    <h2>VOLKSWAGEN GOLF MK3 GLX</h2>
+                
+                    <div class="section">
+                        <h3>Mecânica</h3>
+                        <div class="row">
+                            <div class="column">0-100<br>10.00s</div>
+                            <div class="column">Cavalaria<br>115hp</div>
+                            <div class="column">Torque<br>17kgf/m</div>
+                            <div class="column">Câmbio<br>Manual</div>
+                            <div class="column">Tração<br>Dianteira</div>
+                        </div>
+                    </div>
+                
+                    <div class="section">
+                        <h3>Dimensões</h3>
+                        <div class="row">
+                            <div class="column">Peso<br>1103Kg</div>
+                            <div class="column">Comprimento<br>4.020</div>
+                            <div class="column">Largura/Altura<br>1.695/1.409</div>
+                        </div>
+                    </div>
+                
+                    <div class="section">
+                        <h3>Conforto</h3>
+                        <div class="row">
+                            <div class="column">Ar-Condicionado<br>Sim</div>
+                            <div class="column">Sistema de Som<br>Sim</div>
+                            <div class="column">Bancos<br>Ajuste de altura</div>
+                        </div>
+                    </div>
+                
+                    <div class="section">
+                        <h3>Gastos</h3>
+                        <div class="row">
+                            <div class="column">Consumo<br>Estrada 14km/L<br>Cidade 10km/L</div>
+                            <div class="column">Nível de manutenção<br>Simples</div>
+                            <div class="column">FIPE<br>R$25.000</div>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+        </section>
+
+    </main>
+
+    
         
-    <div class="bann">
-        <div class="logoRa">
-            <img class="img-Ra" src="./images/logo.png" alt="">
-        </div>
-    </div>
-
-    <div id="car-list"></div> <!-- Local para exibir os carros -->
-
-    <script src="car-info.js"></script> 
- 
+    <script src="./JS/global.js"></script>
+    <script src="./JS/car/car-info.js"></script>
 </body>
 </html>
