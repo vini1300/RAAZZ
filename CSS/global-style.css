@@ -133,6 +133,21 @@ nav ul li a:hover::after {
     transform: translateY(-2px);
 }
 
+.logout-button {
+    font-size: 15px; 
+    border-radius: 5px; 
+    font-weight: 600; 
+    border-color: #fff;
+    width: 65px; 
+    height: 40px; 
+}
+
+.logout-button:hover {
+    transform: translateY(-2px);
+    background-color: transparent;
+    color: #fff;
+}
+
 .menu-toggle {
     display: none;
     background: none;

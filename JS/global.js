@@ -62,7 +62,7 @@ async function createHeader() {
         logoutBtn.textContent = 'Logout';
         logoutBtn.className = 'logout-button';
         logoutBtn.onclick = logout;
-
+        
         loginRegDiv.appendChild(userEmail);
         loginRegDiv.appendChild(logoutBtn);
     } else {
@@ -153,7 +153,7 @@ async function obterDadosCarros() {
 function registerUser() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    
+
     if (!email || !password) {
         alert('Por favor, preencha todos os campos');
         return;
@@ -173,7 +173,7 @@ function registerUser() {
 function loginUser() {
     const email = document.getElementById("reg-email").value;
     const password = document.getElementById("password").value;
-    
+
     if (!email || !password) {
         alert('Por favor, preencha todos os campos');
         return;
