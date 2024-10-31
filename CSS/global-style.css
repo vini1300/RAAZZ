@@ -165,7 +165,7 @@ footer {
 
 footer nav ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.8rem;
 }
 
@@ -210,6 +210,12 @@ footer nav ul li a:hover {
     header nav ul.active {
         display: flex;
         animation: slideDown 0.3s ease forwards;
+    }
+
+    footer nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
     }
 
     @keyframes slideDown {
