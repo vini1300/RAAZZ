@@ -12,42 +12,39 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./CSS/global-style.css">
-    <link rel="stylesheet" href="./CSS/register.css">
+    <link rel="stylesheet" href="./CSS/login-registro.css">
 </head>
 <body>
     <main>
-        <section class="reg-section">
-            <div class="reg-Text">
-                <div class="reg-Title">
+        <section class="section-1">
+            <div class="log-Text">
+                <div class="log-Title">
                     <h1>Criar uma nova conta</h1>
+                </div>  
+                <div class="log-subtitle">
+                    <p>Já tem uma conta?</p>
+                </div>
+                <div>
+                    <a href="login.html" class="reg-Link">Entrar</a> 
                 </div> 
-                <div class="reg-subtitle">
-                    <p>Tem uma conta?</p>
-                    <a href="#sign" class="sign">Entrar</a>
-                </div>     
             </div>
         </section>
-        <section class="register">
-            <form class="reg-table">
+        <section class="login">
+            <form class="log-table" onsubmit="event.preventDefault(); registerUser();">
                 <div>
-                    <label for="email">E-mail</label>
-                    <input id="email" type="email" required name="E-mail">
+                    <p>Email</p>
+                    <input type="email" name="email" id="email" required>
                 </div>
                 <div>
-                    <label for="password">Senha</label>
-                    <input type="password" name="password" id="password">
+                    <p>Senha</p>
+                    <input type="password" name="password" id="password" required>
                 </div>
                 <div>
-
-                    <button class="reg-button" type="submit">Register</button>
-
-                    <button class="reg-button" onclick="registerUser()">Register</button>
+                    <button class="sign-button" type="submit">Register</button>
                 </div>
             </form>
         </section>
     </main>
-    
     <script src="./JS/global.js"></script>
-
 </body>
 </html>
