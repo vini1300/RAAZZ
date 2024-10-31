@@ -43,10 +43,28 @@ main {
 
 .title-div-card {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     gap: 10px;
 }
 
 .titulo {
     color: red;
+}
+
+.fav-button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+.fav-button:hover {
+    transform: scale(1.2);
+}
+
+.detalhes-card {
+    margin-top: 10px;
 }

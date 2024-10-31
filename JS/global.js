@@ -1,6 +1,5 @@
 // Função para criar o header
 async function createHeader() {
-    // Criar o elemento
     const header = document.createElement('header');
     header.id = 'header';
     header.classList.add('header');
@@ -23,12 +22,18 @@ async function createHeader() {
     const ul = document.createElement('ul');
     ul.className = 'nav-menu';
 
+    // Verifica se usuário está logado para mostrar/esconder links
+    const currentUser = checkLogin();
     const links = [
         { href: 'landing-pg.html', text: 'Inicio' },
         { href: 'car-list.html', text: 'Catalogo' },
-        { href: '#suporte', text: 'Suporte' },
-        { href: 'favoritos.html', text: 'Favoritos' },
+        { href: '#suporte', text: 'Suporte' }
     ];
+
+    // Adiciona link de favoritos apenas se estiver logado
+    if (currentUser) {
+        links.push({ href: 'favoritos.html', text: 'Favoritos' });
+    }
 
     links.forEach(link => {
         const li = document.createElement('li');
@@ -47,26 +52,36 @@ async function createHeader() {
     const loginRegDiv = document.createElement('div');
     loginRegDiv.className = 'login-reg-div';
 
-    const botaoLogin = document.createElement('button');
-    botaoLogin.id = 'botaoLogin';
-    botaoLogin.textContent = 'Login';
-    botaoLogin.className = 'login-button';
+    if (currentUser) {
+        // Se estiver logado, mostra email e botão de logout
+        const userEmail = document.createElement('span');
+        userEmail.textContent = currentUser.email;
+        userEmail.className = 'user-email';
 
-    botaoLogin.addEventListener("click", () => {
-        window.location.href = "login.html";
-    })
+        const logoutBtn = document.createElement('button');
+        logoutBtn.textContent = 'Logout';
+        logoutBtn.className = 'logout-button';
+        logoutBtn.onclick = logout;
 
-    const botaoRegistro = document.createElement('button');
-    botaoRegistro.id = 'botaoRegistro';
-    botaoRegistro.textContent = 'Registro';
-    botaoRegistro.className = 'register-button';
+        loginRegDiv.appendChild(userEmail);
+        loginRegDiv.appendChild(logoutBtn);
+    } else {
+        // Se não estiver logado, mostra botões de login e registro
+        const botaoLogin = document.createElement('button');
+        botaoLogin.id = 'botaoLogin';
+        botaoLogin.textContent = 'Login';
+        botaoLogin.className = 'login-button';
+        botaoLogin.onclick = () => window.location.href = "login.html";
 
-    botaoRegistro.addEventListener("click", () => {
-        window.location.href = "register.html";
-    })
+        const botaoRegistro = document.createElement('button');
+        botaoRegistro.id = 'botaoRegistro';
+        botaoRegistro.textContent = 'Registro';
+        botaoRegistro.className = 'register-button';
+        botaoRegistro.onclick = () => window.location.href = "register.html";
 
-    loginRegDiv.appendChild(botaoLogin);
-    loginRegDiv.appendChild(botaoRegistro);
+        loginRegDiv.appendChild(botaoLogin);
+        loginRegDiv.appendChild(botaoRegistro);
+    }
 
     // Adicionar todos os elementos ao header
     header.appendChild(menuToggle);
@@ -83,43 +98,18 @@ async function createHeader() {
     });
 }
 
-// Função para esconder/mostrar o header ao rolar a página (com debounce)
-async function handleScroll() {
-    let lastScrollY = window.scrollY;
-    const header = document.getElementById('header');
-    let timeoutId;
-
-    window.addEventListener('scroll', () => {
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-        }
-        timeoutId = setTimeout(() => {
-            if (window.scrollY > lastScrollY) {
-                // Scroll para baixo - esconder o header
-                header.classList.add('hide');
-            } else {
-                // Scroll para cima - mostrar o header
-                header.classList.remove('hide');
-            }
-            lastScrollY = window.scrollY;
-        }, 300);
-    });
-}
-
-
+// Função para criar o footer
 async function createFooter() {
     const footer = document.createElement("footer");
 
-    // Creating the logo container
     const logoDiv = document.createElement("div");
     logoDiv.className = "logo-2";
 
     const logoImg = document.createElement("img");
     logoImg.src = "images/logo.png";
-    logoImg.alt = "RAAZZ"; // Logo da empresa
+    logoImg.alt = "RAAZZ";
     logoDiv.appendChild(logoImg);
 
-    // Creating the navigation
     const nav = document.createElement("nav");
     const ul = document.createElement("ul");
 
@@ -140,97 +130,81 @@ async function createFooter() {
     });
 
     nav.appendChild(ul);
-
-    // Appending the logo and navigation to the footer
     footer.appendChild(logoDiv);
     footer.appendChild(nav);
-
-    // Appending the footer to the body
     document.body.appendChild(footer);
 }
 
-
-// Função para obter dados do carros.json de forma global
+// Função para obter dados dos carros
 async function obterDadosCarros() {
     try {
-      // Fazendo uma requisição para obter o arquivo carros.json
-      const resposta = await fetch('JSON/carros.json');
-      
-      // Verificando se a requisição foi bem-sucedida
-      if (!resposta.ok) {
-        throw new Error('Erro ao buscar os dados: ' + resposta.statusText);
-      }
-  
-      // Convertendo a resposta para JSON
-      const dados = await resposta.json();
-      
-      // Retornando os dados para serem usados
-      return dados;
+        const resposta = await fetch('JSON/carros.json');
+        if (!resposta.ok) {
+            throw new Error('Erro ao buscar os dados: ' + resposta.statusText);
+        }
+        return await resposta.json();
     } catch (erro) {
-      console.error('Erro ao obter dados dos carros:', erro);
-      return null;
+        console.error('Erro ao obter dados dos carros:', erro);
+        return null;
     }
-  }
-  
-  // Exemplo de como tornar essa função acessível globalmente
-  globalThis.obterDadosCarros = obterDadosCarros;
+}
 
+// Funções de autenticação
+function registerUser() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    
+    if (!email || !password) {
+        alert('Por favor, preencha todos os campos');
+        return;
+    }
 
-// Executar as funções
-createHeader();
-createFooter();
-handleScroll();
+    const user = {
+        email: email,
+        password: password,
+        favorites: []
+    };
 
+    localStorage.setItem("currentUser", JSON.stringify(user));
+    alert('Usuário registrado com sucesso!');
+    window.location.href = 'login.html';
+}
 
+function loginUser() {
+    const email = document.getElementById("reg-email").value;
+    const password = document.getElementById("password").value;
+    
+    if (!email || !password) {
+        alert('Por favor, preencha todos os campos');
+        return;
+    }
 
+    const storedUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    if (storedUser && email === storedUser.email && password === storedUser.password) {
+        alert("Bem vindo à RAAZZ!");
+        window.location.href = "car-list.html";
+    } else {
+        alert("Email ou senha incorretos");
+    }
+}
+
+function checkLogin() {
+    return JSON.parse(localStorage.getItem("currentUser"));
+}
+
+function logout() {
+    localStorage.removeItem("currentUser");
+    window.location.href = 'login.html';
+}
 
 function goToCarList() {
     window.location.href = "car-list.html";
 }
 
-//sessão de login
+// Tornar função global
+globalThis.obterDadosCarros = obterDadosCarros;
 
-
-
-function registerUser() { //função para registro de usuário
-
-    const email = document.getElementById("reg-email").value;
-    const password = document.getElementById("password").value;
-    
-    if (email && password) { // se o email e usuário foram preenchidos ele salva os dados em local storage
-        const user = {
-            email: email,
-            password: password
-        }
-        localStorage.setItem("user", JSON.stringify(user));
-        alert('usuario registrado com suceso')
-    } else {
-        alert('erro ao registrar')
-    }
-}
-
-function loginUser() { //função para login do usuário
-    
-    const email = document.getElementById("reg-email").value;
-    const password = document.getElementById("password").value;
-
-    const storedUser = JSON.parse(localStorage.getItem("storedUser")) //cria uma variável que puxa o usuário criado no local storage
-
-    if (storedUser) {
-        if (email == storedUser.email && password == storedUser.password) { //compara a entrada de login do usuário com as informações salvas
-            alert("bem vindo a RAAZZ");
-            window.location.href = "car-list.html"; //direciona o usuário para o restante do site
-        } else {
-            alert("senha ou email incorretos")
-        }
-    } else {
-        alert("usuario nao encontrado");
-    }
-
-    if(storedUser) {
-        links.push({href: 'favoritos.html', text: 'Favoritos'});
-    }
-    if(!storedUser) {
-        window.location.href = "login.html";
-    }
-}
+// Executar funções de inicialização
+createHeader();
+createFooter();
