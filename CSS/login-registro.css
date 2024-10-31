@@ -19,14 +19,15 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 2rem;
-    gap: 4rem;
+    min-height: 100dvh;
+    padding: clamp(1rem, 5vw, 3rem);
+    gap: clamp(2rem, 5vw, 4rem);
 }
 
 .section-1 {
     flex: 1;
-    max-width: 500px;
+    max-width: 550px;
+    padding: 2rem;
 }
 
 .log-Text {
@@ -38,13 +39,14 @@ main {
 }
 
 .log-Title h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    margin-bottom: 1.5rem;
 }
 
 .log-subtitle p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .reg-Link {
@@ -52,77 +54,83 @@ main {
     text-decoration: none;
     color: var(--color-white);
     background-color: var(--primary-darkM);
-    padding: 0.8rem 2rem;
-    border-radius: 8px;
-    font-weight: 500;
+    padding: clamp(0.6rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
     transition: all 0.3s ease;
 }
 
 .reg-Link:hover {
-    transform: scale(1.05);
+    transform: translateY(-3px);
     background-color: var(--primary-dark);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .login {
     flex: 1;
-    max-width: 400px;
+    max-width: 450px;
+    width: 100%;
 }
 
 .log-table {
     background-color: var(--primary-darkM);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     width: 100%;
 }
 
 .log-table div {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .log-table p {
     color: var(--color-white);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     font-weight: 500;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 .log-table input {
     width: 100%;
-    padding: 0.8rem;
-    border-radius: 6px;
+    padding: 1rem;
+    border-radius: 8px;
     border: 2px solid transparent;
     background-color: var(--color-white);
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    transition: all 0.3s ease;
 }
 
 .log-table input:focus {
     border-color: var(--primary-light);
     outline: none;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
 .forget-password {
     display: block;
     color: var(--color-white);
     text-decoration: none;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    margin-top: 0.8rem;
     opacity: 0.8;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .forget-password:hover {
     opacity: 1;
+    transform: translateX(5px);
 }
 
 .sign-button {
     width: 100%;
-    padding: 0.8rem;
+    padding: 1rem;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     background-color: var(--color-white);
     color: var(--primary-darkM);
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -130,50 +138,53 @@ main {
 
 .sign-button:hover {
     background-color: var(--primary-light);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 1024px) {
+    main {
+        padding: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
     main {
-        padding: 1rem;
-        gap: 2rem;
+        padding: 1.5rem;
+        min-height: calc(100dvh - 60px);
     }
     
     .section-1 {
-        max-width: 100%;
-    }
-    
-    .log-Title h1 {
-        font-size: 2rem;
+        padding: 1rem;
     }
 }
 
 @media (max-width: 640px) {
     main {
         flex-direction: column;
-        gap: 3rem;
+        gap: 2.5rem;
     }
     
-    .login {
-        width: 100%;
+    .section-1 {
         max-width: 100%;
     }
     
-    .log-table {
-        padding: 1.5rem;
+    .login {
+        max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .log-Title h1 {
-        font-size: 1.8rem;
+    main {
+        padding: 1rem;
     }
     
-    .log-subtitle p {
-        font-size: 1rem;
+    .log-table {
+        padding: 1.2rem;
     }
     
     .reg-Link {
-        padding: 0.6rem 1.5rem;
+        width: 100%;
+        text-align: center;
     }
 }

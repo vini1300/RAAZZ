@@ -1,43 +1,49 @@
-
-*{
-    font-family: 'Poppins' ,sans-serif;
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 main {
     background-color: white;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .section-1 {
     display: flex;
     flex-direction: row;
     background-color: black;
-    padding: 60px;
+    padding: clamp(30px, 5vw, 60px);
+    min-height: 80vh;
+    align-items: center;
 }
 
 .titles {
     display: flex;
     flex-direction: column;
-    margin-left: 5dvw;
+    margin-left: clamp(20px, 5vw, 60px);
+    flex: 1;
 }
 
 .Title1 {
     color: white;
-    font-size: 44px;
+    font-size: clamp(32px, 5vw, 44px);
 }
 
 .Title1 h1 {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
 }
 
 .subtitle1 {
     color: white;
-    font-size: 20px;
-    width: 60%;
+    font-size: clamp(16px, 2vw, 20px);
+    width: min(60%, 600px);
 }
 
 .carros-button {
-    margin-top: 20px;
-    text-decoration: none;
+    margin-top: 2rem;
 }
 
 .carros-button a {
@@ -49,269 +55,275 @@ main {
     border: none;
     color: black;
     background-color: white;
-    padding: 15px;
+    padding: 1rem 2rem;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 #ex-carros-btn:hover {
     background-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
 }
 
 .velocimetro-div {
+    flex: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: end;
+    align-items: center;
+    justify-content: center;
 }
 
 .velocimetro-div img {
-    width: 40dvw;
+    width: min(40vw, 500px);
+    height: auto;
 }
 
 aside {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    padding: 50px;
+    padding: clamp(25px, 4vw, 50px);
     background-color: black;
 }
 
 .pesquisa {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #pesquisar-carro {
     width: 100%;
-    margin-inline: 5dvw;
-    padding: 15px;
-    font-size: 18px;
-    border-radius: 5px;
-    outline: none;
+    padding: 1rem;
+    font-size: clamp(16px, 2vw, 18px);
+    border-radius: 8px;
     background-color: #f9f9f9;
     color: #333;
-    border: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
-#pesquisar-carro::placeholder {
-    color: #aaa;
+#pesquisar-carro:focus {
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.marcas-de-carros {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
+.marcas-de-carros,
 .carros-populares {
     width: 100%;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: clamp(15px, 3vw, 30px);
 }
 
 .container {
     position: relative;
-    text-align: center;
-    margin: 0;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
 }
 
 .header h2 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: clamp(20px, 3vw, 24px);
 }
 
 .ver-todos {
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-size: clamp(14px, 1.5vw, 16px);
+    transition: color 0.3s ease;
+}
+
+.ver-todos:hover {
+    color: var(--primary-dark);
 }
 
 .carrossel {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
     position: relative;
-    overflow:auto;
-    margin: 0;
+    width: 100%;
+    overflow: hidden;
 }
 
 .carrossel-content {
-    display: flex;
-    overflow: auto;
-    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(25% - 15px);
     gap: 20px;
-    padding: 15px;
-    transition: transform 0.3s ease-in-out;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 1rem;
+}
+
+.carrossel-content::-webkit-scrollbar {
+    display: none;
 }
 
 .marca-item {
     min-width: 200px;
-    height: 20dvh;
-    margin: 0 15px;
-    transition: transform 0.3s;
+    height: 150px;
+    padding: 1rem;
     border: 2px solid #ddd;
-    border-radius: 5px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
+    scroll-snap-align: start;
+}
+
+.marca-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: var(--primary-dark);
 }
 
 .marca-item img {
-    width: 100%;
-    max-width: 100px;
-    height: auto;
-    display: block;
-    padding: 10px;
-    background-color: #fff;
+    width: auto;
+    height: 80%;
+    object-fit: contain;
 }
 
 .manutencao {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    margin: 0;
-    gap: 20px;
+    gap: clamp(20px, 4vw, 40px);
+    padding: clamp(20px, 4vw, 40px);
     background-color: var(--color-white);
 }
 
 .texto {
-    padding: 50px;
+    flex: 1;
+    padding: clamp(25px, 4vw, 50px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .mega-txt {
-    font-size: 30px;
-    display: left;
-    position: relative;
-    justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 0px;
-
+    font-size: clamp(24px, 4vw, 30px);
+    margin-bottom: 2rem;
 }
 
 .mega-txt h1 {
-    margin: 0;
-    width: 430px;
+    max-width: 430px;
 }
 
 .text-nrm {
-    margin: 0;
-    margin-left: 5px;
-    font-size: 15px;
+    font-size: clamp(14px, 1.5vw, 15px);
+    margin-bottom: 2rem;
 }
 
-.text-nrm p{
+.text-nrm p {
     color: var(--primary-dark2);
-    padding-right: 60px;
+    max-width: 600px;
 }
 
 .img-oleo {
-    position: relative;
-    width: 100vw; /* Preencher toda a largura da viewport */
-    height: 100vh; /* Preencher toda a altura da viewport */
-    overflow: hidden; /* Garantir que o conteúdo extra seja ocultado */
-  }
-  
-  .img-oleo img {
+    flex: 1;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.img-oleo img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    object-position: center;
-    display: block;
-  }
+    object-fit: cover;
+}
 
 .btn-saiba {
-    margin-top: 40px;
+    margin-top: 2rem;
 }
 
 .btn-saiba button {
-    font-size: 20px;   
-    padding: 20px 30px;
+    font-size: clamp(16px, 2vw, 20px);
+    padding: 1rem 2rem;
     background-color: var(--color-white);
-    color: var(--primary-dark);         
-    border: 1px solid black;           
-    border-radius: 5px;     
+    color: var(--primary-dark);
+    border: 2px solid black;
+    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .btn-saiba button:hover {
-    background-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.carro-card {
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    min-width: 250px;
-    height: auto;
-    padding: 10px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: start;
-    transition: transform 0.2s ease;
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border: 2px solid var(--primary-dark);
+    border-radius: 12px;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
-.carro-card:hover {
-    transform: scale(1.01);
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.vehicle-card-info {
+.title-div-card {
     display: flex;
-    flex-direction: column;
-    text-align: justify;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-.vehicle-marca-nome {
-    display: flex;
-    gap: 10px;
+.titulo {
+    color: var(--primary-dark);
+    font-size: clamp(16px, 2vw, 18px);
 }
 
-.vehicle-marca-nome .title-name {
-    color: red;
-}
-
-.vehicle-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.vehicle-card h2 {
-    margin-top: 0;
-    color: #000000;
+.fav-button {
+    background: none;
+    border: none;
     font-size: 1.2em;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
+    transition: all 0.3s ease;
 }
 
-.vehicle-card p {
-    color: #666666;
-    font-size: 0.9em;
-    margin-bottom: 10px;
+.fav-button:hover {
+    transform: scale(1.2);
 }
 
-.price {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #000000;    margin-bottom: 10px;
+.detalhes-card {
+    margin-top: 1rem;
+    line-height: 1.5;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
+    .carrossel-content {
+        grid-auto-columns: calc(33.33% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .section-1 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .titles {
+        margin: 0;
+        align-items: center;
+    }
+
+    .subtitle1 {
+        width: 80%;
+    }
+
+    .carrossel-content {
+        grid-auto-columns: calc(50% - 15px);
+    }
 
     .manutencao {
         flex-direction: column;
@@ -320,5 +332,14 @@ aside {
     .velocimetro-div {
         display: none;
     }
+}
 
+@media (max-width: 480px) {
+    .carrossel-content {
+        grid-auto-columns: calc(100% - 15px);
+    }
+
+    .marca-item {
+        min-width: 150px;
+    }
 }

@@ -40,25 +40,53 @@ function mostrarCarrosPopulares() {
 
   carrosselContent.innerHTML = '';
 
-  // Verificar se há carros para exibir
   if (carrosPopulares && carrosPopulares.length > 0) {
     carrosPopulares.slice(0, 10).forEach(carro => {
-
       const card = document.createElement('div');
-      card.classList.add('carro-card');
+      card.classList.add('card');
 
-      card.innerHTML = `
-        <div class="vehicle-card-info">0
-          <div class="vehicle-marca-nome">
-            <h2 class="title-marca">${carro.marca}</h2>
-            <h2 class="title-name">${carro.nome}</h2>
-          </div>
-          <img src="${carro.imagem}" alt="${carro.nome}" class="vehicle-image">
-          <p class="price">${carro.preco}</p>
-          <p class="details">${carro.ano}</p>
-        </div>
-      `;
+      const user = checkLogin();
+      const isFavorite = user && user.favorites && user.favorites.includes(carro.id);
 
+      const marca = document.createElement('h3');
+      marca.classList.add('marca');
+      marca.textContent = carro.marca;
+
+      const titulo = document.createElement('h3');
+      titulo.classList.add('titulo');
+      titulo.textContent = carro.nome;
+
+      const divTitle = document.createElement('div');
+      divTitle.classList.add('title-div-card');
+      divTitle.appendChild(marca);
+      divTitle.appendChild(titulo);
+
+      if (user) {
+        const favButton = document.createElement('button');
+        favButton.classList.add('fav-button');
+        favButton.innerHTML = isFavorite ? '❤️' : '🤍';
+        favButton.onclick = () => {
+          toggleFavorite(carro.id);
+          favButton.innerHTML = favButton.innerHTML === '🤍' ? '❤️' : '🤍';
+        };
+        divTitle.appendChild(favButton);
+      }
+
+      const detalhes = document.createElement('div');
+      detalhes.classList.add('detalhes-card');
+      detalhes.innerHTML = `
+        <p>Ano: ${carro.ano}</p>
+        <p>Preço: ${carro.preco}</p>`;
+
+      card.onclick = (e) => {
+        if (e.target.classList.contains('fav-button')) {
+          return;
+        }
+        window.location.href = `car-info.html?id=${carro.id}`;
+      };
+
+      card.appendChild(divTitle);
+      card.appendChild(detalhes);
       carrosselContent.appendChild(card);
     });
   } else {

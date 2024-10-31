@@ -553,5 +553,33 @@
             "problemasCronicos": "Problemas na bomba de combustível"
         },
         "descricao": "O Peugeot 208 2017 é um hatch moderno e estiloso, com excelente consumo de combustível e ótima dirigibilidade."
+    },
+    {
+        "id": 21,
+        "marca": "Fiat",
+        "nome": "Argo",
+        "preco": "R$ 47.000",
+        "km": "80.000 km",
+        "ano": "2017",
+        "tipoMotor": "1.0",
+        "potencia": "80 CV",
+        "consumo": "15 km/l",
+        "img-thumb": "https://th.bing.com/th/id/OIP.xaZztNlgIjrKOc7VPoSXTAHaEK?rs=1&pid=ImgDetMain",
+        "img-car": "exemplo",
+        "detalhes": {
+            "tracao": "Dianteira",
+            "aceleracao": "0-100 km/h em 12.2s",
+            "torque": "120 Nm",
+            "peso": "980 kg",
+            "capacidadePortaMalas": "285 L",
+            "numeroAssentos": 5,
+            "dimensoes": "3.9m x 1.7m x 1.5m",
+            "tipoCambio": "Manual",
+            "freios": "Disco na frente e tambor atrás",
+            "suspensao": "Convencional",
+            "manutencao": "Moderado custo",
+            "problemasCronicos": "Problemas na bomba de combustível"
+        },
+        "descricao": "O Fiat Argo 2017 é um hatch moderno e estiloso, com excelente consumo de combustível e ótima dirigibilidade."
     }
 ]
