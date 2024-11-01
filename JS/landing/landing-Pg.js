@@ -83,3 +83,9 @@ function mostrarCarrosPopulares() {
         carrosselContent.innerHTML = '<p>Nenhum carro disponível.</p>';
     }
 }
+
+function filtrarPorMarca(marca) {
+    // Armazena a marca selecionada no localStorage
+    localStorage.setItem('marcaSelecionada', marca);
+    window.location.href = 'car-list.html';
+}
