@@ -98,27 +98,6 @@ async function createHeader() {
     });
 }
 
-// Função para esconder/mostrar o header ao rolar
-async function handleScroll() {
-    let lastScrollY = window.scrollY;
-    const header = document.getElementById('header');
-    let timeoutId;
-
-    window.addEventListener('scroll', () => {
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-        }
-        timeoutId = setTimeout(() => {
-            if (window.scrollY > lastScrollY) {
-                header.classList.add('hide');
-            } else {
-                header.classList.remove('hide');
-            }
-            lastScrollY = window.scrollY;
-        }, 300);
-    });
-}
-
 // Função para criar o footer
 async function createFooter() {
     const footer = document.createElement("footer");
@@ -176,4 +155,3 @@ globalThis.obterDadosCarros = obterDadosCarros;
 // Executar funções de inicialização
 createHeader();
 createFooter();
-handleScroll();
