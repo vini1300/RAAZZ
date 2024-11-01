@@ -26,6 +26,8 @@ body {
     width: 100%;
     background-color: black;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 section {
@@ -160,6 +162,10 @@ nav ul li a:hover::after {
     padding: 0.5rem;
 }
 
+main {
+    flex: 1;
+}
+
 footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -167,6 +173,7 @@ footer {
     color: white;
     padding: clamp(1.5rem, 3vw, 2.5rem);
     gap: clamp(1.5rem, 3vw, 2rem);
+    margin-top: auto;
 }
 
 .logo-2 {
