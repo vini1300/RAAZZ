@@ -1,66 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favoritos</title>
-    <link rel="stylesheet" href="CSS/favoritos.css">
+    <title>Meus Favoritos - RAAZZ</title>
     <link rel="stylesheet" href="CSS/global-style.css">
-    <link rel="icon" href="images/Block.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/favoritos.css">
 </head>
-
 <body>
     <main>
-        <div class="meus-favoritos">
+        <div class="container">
             <h1>Meus Favoritos</h1>
-        </div>
-        <div class="Grid-de-Favoritos" id="favoritos-list">
-            <!-- Favoritos serão inseridos aqui dinamicamente -->
+            <div id="favoritos-list" class="favoritos-grid">
+                <!-- Cards serão inseridos aqui via JavaScript -->
+            </div>
+            <div id="sem-favoritos" class="sem-favoritos hidden">
+                <p>Você ainda não tem carros favoritos.</p>
+                <a href="car-list.html" class="btn-primary">Explorar Carros</a>
+            </div>
         </div>
     </main>
-    <!-- Incluir user.js antes de global.js com defer -->
-    <script src="./JS/user.js" defer></script>
-    <script src="./JS/favorite/favorites.js" defer></script>
-    <script src="./JS/global.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const favoritosList = document.getElementById('favoritos-list');
-            const currentUser = checkLogin();
 
-            if (!currentUser) {
-                window.location.href = 'login.html';
-                return;
-            }
-
-            if (currentUser.favorites.length === 0) {
-                favoritosList.innerHTML = '<p>Você ainda não tem carros favoritos.</p>';
-                return;
-            }
-
-            obterDadosCarros().then(carros => {
-                if (carros) {
-                    currentUser.favorites.forEach(carId => {
-                        const carro = carros.find(c => c.id === carId);
-                        if (carro) {
-                            const item = document.createElement('div');
-                            item.classList.add('Itens-Favoritos');
-                            item.innerHTML = `
-                                <h3>${carro.marca} ${carro.nome}</h3>
-                                <p>Ano: ${carro.ano}</p>
-                                <p>Preço: ${carro.preco}</p>
-                                <button onclick="toggleFavorite(${carro.id})">Remover dos Favoritos</button>
-                            `;
-                            favoritosList.appendChild(item);
-                        }
-                    });
-                } else {
-                    favoritosList.innerHTML = '<p>Erro ao carregar favoritos.</p>';
-                }
-            });
-        });
-    </script>
+    <script src="JS/user.js"></script>
+    <script src="JS/favoritos.js"></script>
+    <script src="JS/global.js"></script>
 </body>
-
 </html>
