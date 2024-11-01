@@ -98,6 +98,27 @@ async function createHeader() {
     });
 }
 
+// Função para esconder/mostrar o header ao rolar
+async function handleScroll() {
+    let lastScrollY = window.scrollY;
+    const header = document.getElementById('header');
+    let timeoutId;
+
+    window.addEventListener('scroll', () => {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        timeoutId = setTimeout(() => {
+            if (window.scrollY > lastScrollY) {
+                header.classList.add('hide');
+            } else {
+                header.classList.remove('hide');
+            }
+            lastScrollY = window.scrollY;
+        }, 300);
+    });
+}
+
 // Função para criar o footer
 async function createFooter() {
     const footer = document.createElement("footer");
@@ -149,62 +170,10 @@ async function obterDadosCarros() {
     }
 }
 
-// Funções de autenticação
-function registerUser() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    if (!email || !password) {
-        alert('Por favor, preencha todos os campos');
-        return;
-    }
-
-    const user = {
-        email: email,
-        password: password,
-        favorites: []
-    };
-
-    localStorage.setItem("currentUser", JSON.stringify(user));
-    alert('Usuário registrado com sucesso!');
-    window.location.href = 'login.html';
-}
-
-function loginUser() {
-    const email = document.getElementById("reg-email").value;
-    const password = document.getElementById("password").value;
-
-    if (!email || !password) {
-        alert('Por favor, preencha todos os campos');
-        return;
-    }
-
-    const storedUser = JSON.parse(localStorage.getItem("currentUser"));
-
-    if (storedUser && email === storedUser.email && password === storedUser.password) {
-        alert("Bem vindo à RAAZZ!");
-        window.location.href = "car-list.html";
-    } else {
-        alert("Email ou senha incorretos");
-    }
-}
-
-function checkLogin() {
-    return JSON.parse(localStorage.getItem("currentUser"));
-}
-
-function logout() {
-    localStorage.removeItem("currentUser");
-    window.location.href = 'login.html';
-}
-
-function goToCarList() {
-    window.location.href = "car-list.html";
-}
-
-// Tornar função global
+// Tornar funções globais
 globalThis.obterDadosCarros = obterDadosCarros;
 
 // Executar funções de inicialização
 createHeader();
 createFooter();
+handleScroll();

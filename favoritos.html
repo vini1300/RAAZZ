@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -14,21 +14,53 @@
 <body>
     <main>
         <div class="meus-favoritos">
-            <h1> Meus Favoritos</h1>
+            <h1>Meus Favoritos</h1>
         </div>
-        <div class="Grid-de-Favoritos">
-            <div class="Itens-Favoritos"></div>
-            <div class="Itens-Favoritos"></div>
-            <div class="Itens-Favoritos"></div>
-            <div class="Itens-Favoritos"></div>
-            <div class="Itens-Favoritos"></div>
-            <div class="Itens-Favoritos"></div>
-            <div class="Itens-Favoritos"></div>
-            <div class="Itens-Favoritos"></div>
+        <div class="Grid-de-Favoritos" id="favoritos-list">
+            <!-- Favoritos serão inseridos aqui dinamicamente -->
         </div>
     </main>
-    <script src="./JS/global.js"></script>
-    <script src="./JS/favorite/favorites.js"></script>
+    <!-- Incluir user.js antes de global.js com defer -->
+    <script src="./JS/user.js" defer></script>
+    <script src="./JS/favorite/favorites.js" defer></script>
+    <script src="./JS/global.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const favoritosList = document.getElementById('favoritos-list');
+            const currentUser = checkLogin();
+
+            if (!currentUser) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            if (currentUser.favorites.length === 0) {
+                favoritosList.innerHTML = '<p>Você ainda não tem carros favoritos.</p>';
+                return;
+            }
+
+            obterDadosCarros().then(carros => {
+                if (carros) {
+                    currentUser.favorites.forEach(carId => {
+                        const carro = carros.find(c => c.id === carId);
+                        if (carro) {
+                            const item = document.createElement('div');
+                            item.classList.add('Itens-Favoritos');
+                            item.innerHTML = `
+                                <h3>${carro.marca} ${carro.nome}</h3>
+                                <p>Ano: ${carro.ano}</p>
+                                <p>Preço: ${carro.preco}</p>
+                                <button onclick="toggleFavorite(${carro.id})">Remover dos Favoritos</button>
+                            `;
+                            favoritosList.appendChild(item);
+                        }
+                    });
+                } else {
+                    favoritosList.innerHTML = '<p>Erro ao carregar favoritos.</p>';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
