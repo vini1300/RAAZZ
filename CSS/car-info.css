@@ -1,111 +1,146 @@
 .section1 {
-    min-height: 60vh;
-    padding: clamp(20px, 4vw, 40px);
-    background: #fff;
+    min-height: 75vh;
+    padding: clamp(30px, 6vw, 60px);
+    background: linear-gradient(135deg, #f1f3f5, #dee2e6);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .container-img {
     position: relative;
-    width: min(90%, 800px);
+    width: min(92%, 1000px);
     aspect-ratio: 16 / 9;
-    border-radius: 12px;
+    border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    transform: perspective(1500px) rotateX(4deg);
+    transition: transform 0.4s ease;
+}
+
+.container-img:hover {
+    transform: perspective(1500px) rotateX(0deg);
 }
 
 .container-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .container-img:hover img {
-    transform: scale(1.05);
+    transform: scale(1.15);
 }
 
 .section2 {
     min-height: 100vh;
-    padding: clamp(20px, 4vw, 40px);
+    padding: clamp(35px, 7vw, 70px);
     display: flex;
     justify-content: center;
-    background: linear-gradient(0deg, #000 0%, var(--primary-dark) 100%);
+    background: linear-gradient(0deg, #000 0%, var(--primary-dark) 120%);
+    position: relative;
 }
 
 .description {
-    width: min(90%, 800px);
-    margin-top: -80px;
+    width: min(92%, 1000px);
+    margin-top: -120px;
+    position: relative;
+    z-index: 2;
 }
 
 .card {
     background-color: var(--card-bg);
-    padding: clamp(20px, 3vw, 30px);
-    border-radius: 20px;
+    padding: clamp(35px, 6vw, 45px);
+    border-radius: 32px;
     box-shadow: 
-        6px 6px 12px var(--shadow-dark),
-        -6px -6px 12px var(--shadow-light);
-    border: 1px solid var(--border-highlight);
-    backdrop-filter: blur(10px);
+        15px 15px 30px var(--shadow-dark),
+        -15px -15px 30px var(--shadow-light);
+    border: 2.5px solid var(--border-highlight);
+    backdrop-filter: blur(25px);
 }
 
 h2 {
-    font-size: clamp(18px, 2.5vw, 24px);
-    margin-bottom: 2rem;
+    font-size: clamp(24px, 3.5vw, 36px);
+    margin-bottom: 3.5rem;
     text-align: center;
     color: var(--color-white);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .section {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     color: #fff;
 }
 
 .section h3 {
-    font-size: clamp(14px, 1.8vw, 16px);
-    padding-bottom: 0.8rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid var(--border-highlight);
+    font-size: clamp(20px, 2.4vw, 24px);
+    padding-bottom: 1.4rem;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid var(--border-highlight);
     color: var(--color-white);
+    font-weight: 700;
 }
 
 .row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: clamp(15px, 2vw, 25px);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(30px, 4vw, 40px);
 }
 
 .column {
     text-align: center;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
 }
 
 .column:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.column i {
+    font-size: 1.8rem;
+    color: var(--border-highlight);
+    transition: transform 0.3s ease;
+}
+
+.column:hover i {
+    transform: scale(1.2);
 }
 
 .column span {
     display: block;
     color: #fff;
-    font-weight: 600;
-    margin-top: 0.5rem;
-    font-size: clamp(12px, 1.5vw, 14px);
+    font-weight: 700;
+    margin: 1.2rem 0 0.5rem;
+    font-size: clamp(15px, 1.9vw, 17px);
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
     .description {
-        margin-top: -40px;
+        margin-top: -80px;
     }
 
     .row {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .column {
+        padding: 1.8rem;
     }
 }
 
@@ -116,6 +151,13 @@ h2 {
 
     .column {
         text-align: left;
-        padding: 0.8rem;
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .column span {
+        margin: 0;
     }
 }
